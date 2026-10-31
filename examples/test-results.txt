@@ -61,7 +61,7 @@ test_real_records_actually_exercise_each_scenario (test_records.RecordInvariantT
 test_records_exist_for_every_scenario (test_records.RecordInvariantTests.test_records_exist_for_every_scenario) ... ok
 
 ----------------------------------------------------------------------
-Ran 58 tests in 21.938s
+Ran 58 tests in 18.509s
 
 OK
 
@@ -127,6 +127,6 @@ test_real_records_actually_exercise_each_scenario (test_records.RecordInvariantT
 test_records_exist_for_every_scenario (test_records.RecordInvariantTests) ... ok
 
 ----------------------------------------------------------------------
-Ran 58 tests in 26.995s
+Ran 58 tests in 23.306s
 
 OK

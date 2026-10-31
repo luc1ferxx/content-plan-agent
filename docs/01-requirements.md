@@ -11,7 +11,7 @@
 | 输入 | 来源 | 说明 |
 |---|---|---|
 | 主题、预算、截止时间 | 请求 JSON（`examples/inputs/`）或命令行参数 | 预算单位是“模拟单位”；缺少任一项都不开始执行 |
-| 开始时间 | 请求 `start_time` | 模拟时钟的起点，默认当前时间 |
+| 开始时间 | 请求 `start_time` | 模拟时钟的起点，默认当前时间；截止时间必须晚于开始时间，否则按输入错误处理 |
 | 工具费用与耗时表 | `data/tools.json` | 每个工具的 `fee`、`fee_on_failure`、`minutes`；脚本生成分三档 |
 | 方案模板 | `data/plan_options.json` | P1 旗舰、P2 精简、P3 保底，`priority` 越小效果越好 |
 | 合成素材 | `data/materials.json` | 12 条合成素材，不含真实业务信息 |
