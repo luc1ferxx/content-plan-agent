@@ -90,6 +90,8 @@ def normalize_request(raw, valid_fault_keys=None, now: datetime | None = None) -
 
     deadline = _time_field(raw, "deadline")
     start_time = _time_field(raw, "start_time") or fmt_time(now or datetime.now())
+    if deadline and parse_time(deadline) <= parse_time(start_time):
+        raise ValueError("deadline 必须晚于 start_time")
 
     simulate = raw.get("simulate") or {}
     if not isinstance(simulate, dict):

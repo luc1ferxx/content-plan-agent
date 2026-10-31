@@ -565,6 +565,7 @@ class DecisionLoopTests(AgentTestBase):
 class InputAndCliTests(AgentTestBase):
     def test_format_errors_raise(self):
         bad_inputs = [{"budget": "十"}, {"budget": -1}, {"budget": True}, {"deadline": "11/02 18:00"},
+                      {"deadline": "2026-11-02 08:00"},
                       {"simulate": {"faults": {"unknown_tool": "fail_once"}}},
                       {"simulate": {"faults": {"save_plan": "partial"}}},
                       {"request_id": float("nan")}, {"topic": "\ud800"},
