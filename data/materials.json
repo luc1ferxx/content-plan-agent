@@ -1,0 +1,17 @@
+{
+  "_note": "合成素材库（不含真实业务信息）。素材检索：tags 中任一标签是主题的子串即命中，按命中数、质量分排序，最多返回 5 条。",
+  "materials": [
+    {"material_id": "M01", "title": "秋季新品开箱视频", "type": "video", "tags": ["秋季", "新品", "开箱"], "quality": 5, "summary": "45 秒开箱，展示新品外观与细节"},
+    {"material_id": "M02", "title": "秋季穿搭模特图", "type": "image", "tags": ["秋季", "穿搭"], "quality": 4, "summary": "6 张棚拍模特图，暖色调"},
+    {"material_id": "M03", "title": "新品卖点文案库", "type": "copy", "tags": ["新品", "卖点"], "quality": 4, "summary": "10 条卖点短句，已过法务审核"},
+    {"material_id": "M04", "title": "门店上市实拍", "type": "video", "tags": ["上市", "门店"], "quality": 3, "summary": "门店陈列与客流实拍 30 秒"},
+    {"material_id": "M05", "title": "双十一会场主视觉", "type": "image", "tags": ["双十一", "主视觉"], "quality": 5, "summary": "会场 KV，含横竖两版"},
+    {"material_id": "M06", "title": "双十一满减规则说明", "type": "copy", "tags": ["双十一", "满减"], "quality": 3, "summary": "满减与叠券规则文案"},
+    {"material_id": "M07", "title": "大促直播切片", "type": "video", "tags": ["大促", "直播"], "quality": 4, "summary": "往期大促直播高光切片 60 秒"},
+    {"material_id": "M08", "title": "露营装备开箱", "type": "video", "tags": ["露营", "装备"], "quality": 4, "summary": "帐篷与天幕开箱 40 秒"},
+    {"material_id": "M09", "title": "露营场景氛围图", "type": "image", "tags": ["露营", "氛围"], "quality": 3, "summary": "营地黄昏氛围图 4 张"},
+    {"material_id": "M10", "title": "咖啡拉花教程", "type": "video", "tags": ["咖啡", "教程"], "quality": 4, "summary": "拉花入门教程 75 秒"},
+    {"material_id": "M11", "title": "品牌标识与色板", "type": "image", "tags": ["品牌", "视觉规范"], "quality": 5, "summary": "logo、主辅色与字体规范"},
+    {"material_id": "M12", "title": "预热倒计时海报", "type": "image", "tags": ["预热", "倒计时"], "quality": 4, "summary": "3/2/1 天倒计时海报模板"}
+  ]
+}

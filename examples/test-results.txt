@@ -1,0 +1,132 @@
+# python -m unittest discover -s tests -v
+# Python 3.12.1
+test_action_written_like_an_allowed_token_is_understood (test_acceptance.DecisionLoopTests.test_action_written_like_an_allowed_token_is_understood) ... ok
+test_api_key_never_leaks_into_output_or_state (test_acceptance.DecisionLoopTests.test_api_key_never_leaks_into_output_or_state) ... ok
+test_cost_is_learned_from_the_estimate_tool_not_shown_at_planning (test_acceptance.DecisionLoopTests.test_cost_is_learned_from_the_estimate_tool_not_shown_at_planning) ... ok
+test_deepseek_policy_request_and_parsing (test_acceptance.DecisionLoopTests.test_deepseek_policy_request_and_parsing) ... ok
+test_invalid_decision_is_returned_to_the_model_once (test_acceptance.DecisionLoopTests.test_invalid_decision_is_returned_to_the_model_once) ... ok
+test_llm_cannot_stop_while_alternative_exists (test_acceptance.DecisionLoopTests.test_llm_cannot_stop_while_alternative_exists) ... ok
+test_llm_exception_falls_back_to_mock_for_the_rest_of_the_run (test_acceptance.DecisionLoopTests.test_llm_exception_falls_back_to_mock_for_the_rest_of_the_run) ... ok
+test_llm_without_key_is_a_configuration_error (test_acceptance.DecisionLoopTests.test_llm_without_key_is_a_configuration_error) ... ok
+test_model_chooses_the_action_at_every_step (test_acceptance.DecisionLoopTests.test_model_chooses_the_action_at_every_step) ... ok
+test_model_is_told_the_truth_about_the_current_option (test_acceptance.DecisionLoopTests.test_model_is_told_the_truth_about_the_current_option) ... ok
+test_model_output_with_extra_text_is_parsed (test_acceptance.DecisionLoopTests.test_model_output_with_extra_text_is_parsed) ... ok
+test_model_sees_tool_results_and_can_replan_when_things_look_fine (test_acceptance.DecisionLoopTests.test_model_sees_tool_results_and_can_replan_when_things_look_fine) ... ok
+test_repeatedly_invalid_decision_falls_back_to_mock (test_acceptance.DecisionLoopTests.test_repeatedly_invalid_decision_falls_back_to_mock) ... ok
+test_unknown_action_is_never_executed_as_a_stop (test_acceptance.DecisionLoopTests.test_unknown_action_is_never_executed_as_a_stop) ... ok
+test_unparsable_model_output_is_returned_to_the_model_not_treated_as_an_outage (test_acceptance.DecisionLoopTests.test_unparsable_model_output_is_returned_to_the_model_not_treated_as_an_outage) ... ok
+test_voluntarily_abandoned_option_cannot_be_chosen_again (test_acceptance.DecisionLoopTests.test_voluntarily_abandoned_option_cannot_be_chosen_again) ... ok
+test_voluntarily_abandoned_option_is_available_again_after_a_failure (test_acceptance.DecisionLoopTests.test_voluntarily_abandoned_option_is_available_again_after_a_failure) ... ok
+test_cli_accepts_bom_and_utf16_input_and_output_file (test_acceptance.InputAndCliTests.test_cli_accepts_bom_and_utf16_input_and_output_file) ... ok
+test_cli_exit_codes_and_outputs (test_acceptance.InputAndCliTests.test_cli_exit_codes_and_outputs) ... ok
+test_cli_limit_and_resume (test_acceptance.InputAndCliTests.test_cli_limit_and_resume) ... ok
+test_decimal_budget_has_no_float_noise (test_acceptance.InputAndCliTests.test_decimal_budget_has_no_float_noise) ... ok
+test_format_errors_raise (test_acceptance.InputAndCliTests.test_format_errors_raise) ... ok
+test_request_key_ignores_start_time_faults_and_limits (test_acceptance.InputAndCliTests.test_request_key_ignores_start_time_faults_and_limits) ... ok
+test_invariants_hold_across_budgets_and_faults (test_acceptance.InvariantGridTests.test_invariants_hold_across_budgets_and_faults) ... ok
+test_default_limits_cover_the_longest_legal_path (test_acceptance.LimitTests.test_default_limits_cover_the_longest_legal_path) ... ok
+test_model_turn_limit_returns_explicit_unfinished_state (test_acceptance.LimitTests.test_model_turn_limit_returns_explicit_unfinished_state) ... ok
+test_resume_is_promised_only_when_it_can_still_succeed (test_acceptance.LimitTests.test_resume_is_promised_only_when_it_can_still_succeed) ... ok
+test_tool_call_limit_returns_explicit_unfinished_state (test_acceptance.LimitTests.test_tool_call_limit_returns_explicit_unfinished_state) ... ok
+test_budget_infeasible_returns_gap_without_spending (test_acceptance.MustPassTests.test_budget_infeasible_returns_gap_without_spending) ... ok
+test_deadline_boundaries_keep_feasible_options (test_acceptance.MustPassTests.test_deadline_boundaries_keep_feasible_options) ... ok
+test_gap_summary_names_closest_option_on_both_axes (test_acceptance.MustPassTests.test_gap_summary_names_closest_option_on_both_axes) ... ok
+test_injected_partial_and_no_material (test_acceptance.MustPassTests.test_injected_partial_and_no_material) ... ok
+test_missing_budget_or_deadline (test_acceptance.MustPassTests.test_missing_budget_or_deadline) ... ok
+test_normal_completion (test_acceptance.MustPassTests.test_normal_completion) ... ok
+test_partial_search_result_switches_to_option_it_satisfies (test_acceptance.MustPassTests.test_partial_search_result_switches_to_option_it_satisfies) ... ok
+test_reference_example_budget_10_switches_from_12_to_8 (test_acceptance.MustPassTests.test_reference_example_budget_10_switches_from_12_to_8) ... ok
+test_repeat_execution_is_idempotent (test_acceptance.MustPassTests.test_repeat_execution_is_idempotent) ... ok
+test_repeat_of_infeasible_request_does_not_rerun_tools (test_acceptance.MustPassTests.test_repeat_of_infeasible_request_does_not_rerun_tools) ... ok
+test_retry_that_would_exceed_budget_switches_instead (test_acceptance.MustPassTests.test_retry_that_would_exceed_budget_switches_instead) ... ok
+test_tight_deadline_picks_fastest_option (test_acceptance.MustPassTests.test_tight_deadline_picks_fastest_option) ... ok
+test_timeout_is_retried_when_affordable (test_acceptance.MustPassTests.test_timeout_is_retried_when_affordable) ... ok
+test_tool_failure_switches_option_and_keeps_successful_steps (test_acceptance.MustPassTests.test_tool_failure_switches_option_and_keeps_successful_steps) ... ok
+test_unrecoverable_tool_failure_stops_without_fake_success (test_acceptance.MustPassTests.test_unrecoverable_tool_failure_stops_without_fake_success) ... ok
+test_crash_after_retry_decision_keeps_step_failed (test_acceptance.ResumeTests.test_crash_after_retry_decision_keeps_step_failed) ... ok
+test_crash_after_save_before_finishing_just_finishes (test_acceptance.ResumeTests.test_crash_after_save_before_finishing_just_finishes) ... ok
+test_crash_during_tool_call_is_recorded_and_resumed (test_acceptance.ResumeTests.test_crash_during_tool_call_is_recorded_and_resumed) ... ok
+test_crash_right_after_partial_search_does_not_buy_it_again (test_acceptance.ResumeTests.test_crash_right_after_partial_search_does_not_buy_it_again) ... ok
+test_fail_once_counts_attempts_across_resume (test_acceptance.ResumeTests.test_fail_once_counts_attempts_across_resume) ... ok
+test_resume_after_every_script_mode_failed (test_acceptance.ResumeTests.test_resume_after_every_script_mode_failed) ... ok
+test_resume_only_reruns_failed_save (test_acceptance.ResumeTests.test_resume_only_reruns_failed_save) ... ok
+test_garbage_decisions_never_break_the_invariants (test_fuzz.FuzzTests.test_garbage_decisions_never_break_the_invariants) ... ok
+test_random_allowed_actions_never_break_the_invariants (test_fuzz.FuzzTests.test_random_allowed_actions_never_break_the_invariants) ... ok
+test_committed_mock_records_match_a_fresh_run (test_records.MockRecordTests.test_committed_mock_records_match_a_fresh_run) ... ok
+test_every_record_keeps_invariants (test_records.RecordInvariantTests.test_every_record_keeps_invariants) ... ok
+test_real_model_adjusts_to_different_tool_results (test_records.RecordInvariantTests.test_real_model_adjusts_to_different_tool_results) ... ok
+test_real_model_records_are_decided_by_the_model (test_records.RecordInvariantTests.test_real_model_records_are_decided_by_the_model) ... ok
+test_real_records_actually_exercise_each_scenario (test_records.RecordInvariantTests.test_real_records_actually_exercise_each_scenario)
+故障场景必须真的碰到注入的故障：模型提前绕开的话，这份记录就证明不了验收点。 ... ok
+test_records_exist_for_every_scenario (test_records.RecordInvariantTests.test_records_exist_for_every_scenario) ... ok
+
+----------------------------------------------------------------------
+Ran 58 tests in 21.938s
+
+OK
+
+# Python 3.10.0
+test_action_written_like_an_allowed_token_is_understood (test_acceptance.DecisionLoopTests) ... ok
+test_api_key_never_leaks_into_output_or_state (test_acceptance.DecisionLoopTests) ... ok
+test_cost_is_learned_from_the_estimate_tool_not_shown_at_planning (test_acceptance.DecisionLoopTests) ... ok
+test_deepseek_policy_request_and_parsing (test_acceptance.DecisionLoopTests) ... ok
+test_invalid_decision_is_returned_to_the_model_once (test_acceptance.DecisionLoopTests) ... ok
+test_llm_cannot_stop_while_alternative_exists (test_acceptance.DecisionLoopTests) ... ok
+test_llm_exception_falls_back_to_mock_for_the_rest_of_the_run (test_acceptance.DecisionLoopTests) ... ok
+test_llm_without_key_is_a_configuration_error (test_acceptance.DecisionLoopTests) ... ok
+test_model_chooses_the_action_at_every_step (test_acceptance.DecisionLoopTests) ... ok
+test_model_is_told_the_truth_about_the_current_option (test_acceptance.DecisionLoopTests) ... ok
+test_model_output_with_extra_text_is_parsed (test_acceptance.DecisionLoopTests) ... ok
+test_model_sees_tool_results_and_can_replan_when_things_look_fine (test_acceptance.DecisionLoopTests) ... ok
+test_repeatedly_invalid_decision_falls_back_to_mock (test_acceptance.DecisionLoopTests) ... ok
+test_unknown_action_is_never_executed_as_a_stop (test_acceptance.DecisionLoopTests) ... ok
+test_unparsable_model_output_is_returned_to_the_model_not_treated_as_an_outage (test_acceptance.DecisionLoopTests) ... ok
+test_voluntarily_abandoned_option_cannot_be_chosen_again (test_acceptance.DecisionLoopTests) ... ok
+test_voluntarily_abandoned_option_is_available_again_after_a_failure (test_acceptance.DecisionLoopTests) ... ok
+test_cli_accepts_bom_and_utf16_input_and_output_file (test_acceptance.InputAndCliTests) ... ok
+test_cli_exit_codes_and_outputs (test_acceptance.InputAndCliTests) ... ok
+test_cli_limit_and_resume (test_acceptance.InputAndCliTests) ... ok
+test_decimal_budget_has_no_float_noise (test_acceptance.InputAndCliTests) ... ok
+test_format_errors_raise (test_acceptance.InputAndCliTests) ... ok
+test_request_key_ignores_start_time_faults_and_limits (test_acceptance.InputAndCliTests) ... ok
+test_invariants_hold_across_budgets_and_faults (test_acceptance.InvariantGridTests) ... ok
+test_default_limits_cover_the_longest_legal_path (test_acceptance.LimitTests) ... ok
+test_model_turn_limit_returns_explicit_unfinished_state (test_acceptance.LimitTests) ... ok
+test_resume_is_promised_only_when_it_can_still_succeed (test_acceptance.LimitTests) ... ok
+test_tool_call_limit_returns_explicit_unfinished_state (test_acceptance.LimitTests) ... ok
+test_budget_infeasible_returns_gap_without_spending (test_acceptance.MustPassTests) ... ok
+test_deadline_boundaries_keep_feasible_options (test_acceptance.MustPassTests) ... ok
+test_gap_summary_names_closest_option_on_both_axes (test_acceptance.MustPassTests) ... ok
+test_injected_partial_and_no_material (test_acceptance.MustPassTests) ... ok
+test_missing_budget_or_deadline (test_acceptance.MustPassTests) ... ok
+test_normal_completion (test_acceptance.MustPassTests) ... ok
+test_partial_search_result_switches_to_option_it_satisfies (test_acceptance.MustPassTests) ... ok
+test_reference_example_budget_10_switches_from_12_to_8 (test_acceptance.MustPassTests) ... ok
+test_repeat_execution_is_idempotent (test_acceptance.MustPassTests) ... ok
+test_repeat_of_infeasible_request_does_not_rerun_tools (test_acceptance.MustPassTests) ... ok
+test_retry_that_would_exceed_budget_switches_instead (test_acceptance.MustPassTests) ... ok
+test_tight_deadline_picks_fastest_option (test_acceptance.MustPassTests) ... ok
+test_timeout_is_retried_when_affordable (test_acceptance.MustPassTests) ... ok
+test_tool_failure_switches_option_and_keeps_successful_steps (test_acceptance.MustPassTests) ... ok
+test_unrecoverable_tool_failure_stops_without_fake_success (test_acceptance.MustPassTests) ... ok
+test_crash_after_retry_decision_keeps_step_failed (test_acceptance.ResumeTests) ... ok
+test_crash_after_save_before_finishing_just_finishes (test_acceptance.ResumeTests) ... ok
+test_crash_during_tool_call_is_recorded_and_resumed (test_acceptance.ResumeTests) ... ok
+test_crash_right_after_partial_search_does_not_buy_it_again (test_acceptance.ResumeTests) ... ok
+test_fail_once_counts_attempts_across_resume (test_acceptance.ResumeTests) ... ok
+test_resume_after_every_script_mode_failed (test_acceptance.ResumeTests) ... ok
+test_resume_only_reruns_failed_save (test_acceptance.ResumeTests) ... ok
+test_garbage_decisions_never_break_the_invariants (test_fuzz.FuzzTests) ... ok
+test_random_allowed_actions_never_break_the_invariants (test_fuzz.FuzzTests) ... ok
+test_committed_mock_records_match_a_fresh_run (test_records.MockRecordTests) ... ok
+test_every_record_keeps_invariants (test_records.RecordInvariantTests) ... ok
+test_real_model_adjusts_to_different_tool_results (test_records.RecordInvariantTests) ... ok
+test_real_model_records_are_decided_by_the_model (test_records.RecordInvariantTests) ... ok
+test_real_records_actually_exercise_each_scenario (test_records.RecordInvariantTests)
+故障场景必须真的碰到注入的故障：模型提前绕开的话，这份记录就证明不了验收点。 ... ok
+test_records_exist_for_every_scenario (test_records.RecordInvariantTests) ... ok
+
+----------------------------------------------------------------------
+Ran 58 tests in 26.995s
+
+OK

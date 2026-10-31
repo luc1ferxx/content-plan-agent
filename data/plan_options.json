@@ -1,0 +1,8 @@
+{
+  "_note": "方案模板（合成）。priority 越小效果越好、越优先。每个方案的任务计划固定为：成本估算 → 素材检索 → 脚本生成(script_mode) → 方案保存；所需素材数取脚本模式的 min_materials。按工具费用表：P1=0+2+10+0=12，P2=0+2+6+0=8，P3=0+2+3+0=5；耗时 P1=133、P2=73、P3=33 分钟。",
+  "options": [
+    {"option_id": "P1", "name": "旗舰方案：AI 分镜短视频", "priority": 1, "script_mode": "premium"},
+    {"option_id": "P2", "name": "精简方案：标准短视频", "priority": 2, "script_mode": "standard"},
+    {"option_id": "P3", "name": "保底方案：图文推文", "priority": 3, "script_mode": "lite"}
+  ]
+}

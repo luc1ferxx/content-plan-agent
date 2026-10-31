@@ -1,0 +1,51 @@
+{
+  "run_id": null,
+  "request_key": null,
+  "status": "needs_input",
+  "stop_code": "MISSING_INPUT",
+  "repeat": false,
+  "policy": "llm:deepseek-v4-pro",
+  "mode": "real_model",
+  "boundary": null,
+  "request": {
+    "topic": "秋季新品上市",
+    "budget": null,
+    "deadline": "2026-11-02 18:00",
+    "start_time": "2026-11-02 09:00",
+    "request_id": null,
+    "faults": {},
+    "limits": {}
+  },
+  "missing_inputs": [
+    "budget（预算，模拟单位）"
+  ],
+  "plan": null,
+  "plan_history": [],
+  "steps": [],
+  "tool_calls": [],
+  "decisions": [],
+  "trace": [],
+  "cost": {
+    "budget": null,
+    "spent": 0,
+    "remaining": null,
+    "ledger": [],
+    "rule": "费用合计 = 实际发生的工具调用费用之和：成功/部分成功按表中 fee，失败按 fee_on_failure；复用的已成功步骤不再计费。每次调用（含失败）的耗时都计入模拟时钟。"
+  },
+  "time": {
+    "start_time": "2026-11-02 09:00",
+    "clock": "2026-11-02 09:00",
+    "deadline": "2026-11-02 18:00"
+  },
+  "usage": {
+    "tool_calls": 0,
+    "model_turns": 0
+  },
+  "saved_plan": null,
+  "plan_document": null,
+  "plan_document_saved": false,
+  "gaps": [],
+  "resume_count": 0,
+  "incomplete_reason": "缺少必要输入：budget（预算，模拟单位）。未调用任何工具、未产生费用，请补充后重新提交。",
+  "message": "缺少必要输入，未开始执行"
+}

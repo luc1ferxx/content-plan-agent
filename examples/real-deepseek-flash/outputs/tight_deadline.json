@@ -1,0 +1,710 @@
+{
+  "run_id": "R-2d6bc8a1",
+  "request_key": "2d6bc8a1a231c74a",
+  "status": "completed",
+  "stop_code": null,
+  "repeat": false,
+  "policy": "llm:deepseek-flash",
+  "mode": "real_model",
+  "boundary": null,
+  "request": {
+    "topic": "秋季新品上市",
+    "budget": 15,
+    "deadline": "2026-11-02 09:40",
+    "start_time": "2026-11-02 09:00",
+    "request_id": null,
+    "faults": {},
+    "limits": {}
+  },
+  "plan": {
+    "version": 1,
+    "option_id": "P3",
+    "option_name": "保底方案：图文推文",
+    "steps": [
+      {
+        "step_id": "S1",
+        "name": "成本估算",
+        "tool": "estimate_cost",
+        "mode": null,
+        "depends_on": [],
+        "status": "succeeded",
+        "attempts": 1,
+        "fee_charged": 0,
+        "note": "预计合计 5 ≤ 预算 15，预计 2026-11-02 09:33 完成 ≤ 截止",
+        "reused": false
+      },
+      {
+        "step_id": "S2",
+        "name": "素材检索",
+        "tool": "search_materials",
+        "mode": null,
+        "depends_on": [
+          "S1"
+        ],
+        "status": "succeeded",
+        "attempts": 1,
+        "fee_charged": 2,
+        "note": null,
+        "reused": false
+      },
+      {
+        "step_id": "S3",
+        "name": "脚本生成",
+        "tool": "generate_script",
+        "mode": "lite",
+        "depends_on": [
+          "S2",
+          "S1"
+        ],
+        "status": "succeeded",
+        "attempts": 1,
+        "fee_charged": 3,
+        "note": null,
+        "reused": false
+      },
+      {
+        "step_id": "S4",
+        "name": "方案保存",
+        "tool": "save_plan",
+        "mode": null,
+        "depends_on": [
+          "S3",
+          "S1"
+        ],
+        "status": "succeeded",
+        "attempts": 1,
+        "fee_charged": 0,
+        "note": null,
+        "reused": false
+      }
+    ]
+  },
+  "plan_history": [
+    {
+      "version": 1,
+      "option_id": "P3",
+      "option_name": "保底方案：图文推文",
+      "reason": "当前 allowed_actions 仅允许 plan:P3，且预算 15 偏紧，先按保底方案图文推文启动规划",
+      "reused_steps": []
+    }
+  ],
+  "steps": [
+    {
+      "step_id": "S1",
+      "plan_version": 1,
+      "kind": "estimate",
+      "name": "成本估算",
+      "tool": "estimate_cost",
+      "mode": null,
+      "depends_on": [],
+      "status": "succeeded",
+      "attempts": 1,
+      "fee_charged": 0,
+      "minutes_spent": 1,
+      "result": {
+        "option_id": "P3",
+        "lines": [
+          {
+            "tool": "estimate_cost",
+            "mode": null,
+            "fee": 0,
+            "minutes": 1
+          },
+          {
+            "tool": "search_materials",
+            "mode": null,
+            "fee": 2,
+            "minutes": 10
+          },
+          {
+            "tool": "generate_script",
+            "mode": "lite",
+            "fee": 3,
+            "minutes": 20
+          },
+          {
+            "tool": "save_plan",
+            "mode": null,
+            "fee": 0,
+            "minutes": 2
+          }
+        ],
+        "spent_before": 0,
+        "remaining_fee": 5,
+        "remaining_minutes": 33,
+        "projected_total_fee": 5,
+        "projected_finish": "2026-11-02 09:33"
+      },
+      "error": null,
+      "verdict": "pass",
+      "note": "预计合计 5 ≤ 预算 15，预计 2026-11-02 09:33 完成 ≤ 截止"
+    },
+    {
+      "step_id": "S2",
+      "plan_version": 1,
+      "kind": "search",
+      "name": "素材检索",
+      "tool": "search_materials",
+      "mode": null,
+      "depends_on": [
+        "S1"
+      ],
+      "status": "succeeded",
+      "attempts": 1,
+      "fee_charged": 2,
+      "minutes_spent": 10,
+      "result": {
+        "topic": "秋季新品上市",
+        "need": 1,
+        "found": 4,
+        "materials": [
+          {
+            "material_id": "M01",
+            "title": "秋季新品开箱视频",
+            "type": "video",
+            "tags": [
+              "秋季",
+              "新品",
+              "开箱"
+            ],
+            "summary": "45 秒开箱，展示新品外观与细节"
+          },
+          {
+            "material_id": "M02",
+            "title": "秋季穿搭模特图",
+            "type": "image",
+            "tags": [
+              "秋季",
+              "穿搭"
+            ],
+            "summary": "6 张棚拍模特图，暖色调"
+          },
+          {
+            "material_id": "M03",
+            "title": "新品卖点文案库",
+            "type": "copy",
+            "tags": [
+              "新品",
+              "卖点"
+            ],
+            "summary": "10 条卖点短句，已过法务审核"
+          },
+          {
+            "material_id": "M04",
+            "title": "门店上市实拍",
+            "type": "video",
+            "tags": [
+              "上市",
+              "门店"
+            ],
+            "summary": "门店陈列与客流实拍 30 秒"
+          }
+        ]
+      },
+      "error": null,
+      "verdict": null,
+      "note": null
+    },
+    {
+      "step_id": "S3",
+      "plan_version": 1,
+      "kind": "script",
+      "name": "脚本生成",
+      "tool": "generate_script",
+      "mode": "lite",
+      "depends_on": [
+        "S2",
+        "S1"
+      ],
+      "status": "succeeded",
+      "attempts": 1,
+      "fee_charged": 3,
+      "minutes_spent": 20,
+      "result": {
+        "headline": "秋季新品上市：一图看懂活动亮点",
+        "paragraphs": [
+          "亮点 1：秋季新品开箱视频——45 秒开箱，展示新品外观与细节",
+          "亮点 2：秋季穿搭模特图——6 张棚拍模特图，暖色调",
+          "亮点 3：新品卖点文案库——10 条卖点短句，已过法务审核"
+        ],
+        "images": [
+          "M01",
+          "M02",
+          "M03"
+        ],
+        "cta": "点击原文链接参与活动",
+        "format": "图文推文脚本"
+      },
+      "error": null,
+      "verdict": null,
+      "note": null
+    },
+    {
+      "step_id": "S4",
+      "plan_version": 1,
+      "kind": "save",
+      "name": "方案保存",
+      "tool": "save_plan",
+      "mode": null,
+      "depends_on": [
+        "S3",
+        "S1"
+      ],
+      "status": "succeeded",
+      "attempts": 1,
+      "fee_charged": 0,
+      "minutes_spent": 2,
+      "result": {
+        "result": "created",
+        "plan_id": "CP-2d6bc8a1",
+        "version": 1,
+        "message": "方案已保存"
+      },
+      "error": null,
+      "verdict": null,
+      "note": null
+    }
+  ],
+  "tool_calls": [
+    {
+      "seq": 1,
+      "step_id": "S1",
+      "tool": "estimate_cost",
+      "mode": null,
+      "args": {
+        "option_id": "P3",
+        "spent": 0,
+        "clock": "2026-11-02 09:00",
+        "items": [
+          "estimate_cost",
+          "search_materials",
+          "generate_script:lite",
+          "save_plan"
+        ]
+      },
+      "outcome": "success",
+      "error_code": null,
+      "retryable": null,
+      "message": "P3 预计合计 5，预计 2026-11-02 09:33 完成",
+      "fee": 0,
+      "minutes": 1,
+      "clock_before": "2026-11-02 09:00",
+      "clock_after": "2026-11-02 09:01",
+      "spent_after": 0
+    },
+    {
+      "seq": 2,
+      "step_id": "S2",
+      "tool": "search_materials",
+      "mode": null,
+      "args": {
+        "topic": "秋季新品上市",
+        "need": 1
+      },
+      "outcome": "success",
+      "error_code": null,
+      "retryable": null,
+      "message": "找到 4 条相关素材",
+      "fee": 2,
+      "minutes": 10,
+      "clock_before": "2026-11-02 09:01",
+      "clock_after": "2026-11-02 09:11",
+      "spent_after": 2
+    },
+    {
+      "seq": 3,
+      "step_id": "S3",
+      "tool": "generate_script",
+      "mode": "lite",
+      "args": {
+        "topic": "秋季新品上市",
+        "material_ids": [
+          "M01",
+          "M02",
+          "M03",
+          "M04"
+        ]
+      },
+      "outcome": "success",
+      "error_code": null,
+      "retryable": null,
+      "message": "已生成图文推文脚本",
+      "fee": 3,
+      "minutes": 20,
+      "clock_before": "2026-11-02 09:11",
+      "clock_after": "2026-11-02 09:31",
+      "spent_after": 5
+    },
+    {
+      "seq": 4,
+      "step_id": "S4",
+      "tool": "save_plan",
+      "mode": null,
+      "args": {
+        "plan_id": "CP-2d6bc8a1",
+        "option_id": "P3"
+      },
+      "outcome": "success",
+      "error_code": null,
+      "retryable": null,
+      "message": "方案已保存",
+      "fee": 0,
+      "minutes": 2,
+      "clock_before": "2026-11-02 09:31",
+      "clock_after": "2026-11-02 09:33",
+      "spent_after": 5
+    }
+  ],
+  "decisions": [
+    {
+      "seq": 1,
+      "after_call": 0,
+      "event_type": "plan",
+      "trigger": "初始规划",
+      "action": "plan",
+      "option_id": "P3",
+      "tool": null,
+      "reason": "当前 allowed_actions 仅允许 plan:P3，且预算 15 偏紧，先按保底方案图文推文启动规划",
+      "policy": "llm:deepseek-flash",
+      "model_call": {
+        "response_id": "5fc3c40f-4daf-4be2-8e68-9bd49e4c3f5d",
+        "model": "deepseek-flash",
+        "total_tokens": 1242
+      },
+      "allowed_actions": [
+        "plan:P3"
+      ]
+    },
+    {
+      "seq": 2,
+      "after_call": 1,
+      "event_type": "step_ready",
+      "trigger": "S1 成本估算：预计合计 5 ≤ 预算 15，预计 2026-11-02 09:33 完成 ≤ 截止；下一步是 S2 素材检索",
+      "action": "call_tool",
+      "option_id": null,
+      "tool": "search_materials",
+      "reason": "P3 预计 5≤15、09:33 完成且 feasible，S2 待执行，继续素材检索",
+      "policy": "llm:deepseek-flash",
+      "model_call": {
+        "response_id": "480d06c3-b972-4c63-898c-660785309215",
+        "model": "deepseek-flash",
+        "total_tokens": 1353
+      },
+      "allowed_actions": [
+        "call_tool:search_materials"
+      ]
+    },
+    {
+      "seq": 3,
+      "after_call": 2,
+      "event_type": "step_ready",
+      "trigger": "S2 素材检索：找到 4 条相关素材；下一步是 S3 脚本生成（图文推文脚本）",
+      "action": "call_tool",
+      "option_id": null,
+      "tool": "generate_script",
+      "reason": "当前 P3 保底方案可行（预计 09:33 完成，费用 5，在预算 15 和截止时间 09:40 内），S2 已找到 4 条素材，继续执行 S3 脚本生成。",
+      "policy": "llm:deepseek-flash",
+      "model_call": {
+        "response_id": "232fef9c-045f-4871-8f03-f8bf82f5907d",
+        "model": "deepseek-flash",
+        "total_tokens": 1384
+      },
+      "allowed_actions": [
+        "call_tool:generate_script"
+      ]
+    },
+    {
+      "seq": 4,
+      "after_call": 3,
+      "event_type": "step_ready",
+      "trigger": "S3 脚本生成：已生成图文推文脚本；下一步是 S4 方案保存",
+      "action": "call_tool",
+      "option_id": null,
+      "tool": "save_plan",
+      "reason": "P3 方案可行（预计 09:33 完成、费用 5 在预算 15 内），S3 已成功，继续执行唯一的下一步 S4 保存方案。",
+      "policy": "llm:deepseek-flash",
+      "model_call": {
+        "response_id": "c60b22b7-23a3-474e-82e2-85960f83fb16",
+        "model": "deepseek-flash",
+        "total_tokens": 1378
+      },
+      "allowed_actions": [
+        "call_tool:save_plan"
+      ]
+    }
+  ],
+  "trace": [
+    {
+      "step": 1,
+      "decisions": [
+        {
+          "seq": 1,
+          "trigger": "初始规划",
+          "action": "plan:P3",
+          "reason": "当前 allowed_actions 仅允许 plan:P3，且预算 15 偏紧，先按保底方案图文推文启动规划",
+          "decided_by": "llm:deepseek-flash",
+          "allowed_actions": [
+            "plan:P3"
+          ]
+        }
+      ],
+      "tool_call": {
+        "seq": 1,
+        "step_id": "S1",
+        "tool": "estimate_cost",
+        "mode": null,
+        "args": {
+          "option_id": "P3",
+          "spent": 0,
+          "clock": "2026-11-02 09:00",
+          "items": [
+            "estimate_cost",
+            "search_materials",
+            "generate_script:lite",
+            "save_plan"
+          ]
+        },
+        "outcome": "success",
+        "error_code": null,
+        "retryable": null,
+        "message": "P3 预计合计 5，预计 2026-11-02 09:33 完成",
+        "fee": 0,
+        "minutes": 1,
+        "clock_before": "2026-11-02 09:00",
+        "clock_after": "2026-11-02 09:01",
+        "spent_after": 0
+      },
+      "next_action": "call_tool:search_materials"
+    },
+    {
+      "step": 2,
+      "decisions": [
+        {
+          "seq": 2,
+          "trigger": "S1 成本估算：预计合计 5 ≤ 预算 15，预计 2026-11-02 09:33 完成 ≤ 截止；下一步是 S2 素材检索",
+          "action": "call_tool:search_materials",
+          "reason": "P3 预计 5≤15、09:33 完成且 feasible，S2 待执行，继续素材检索",
+          "decided_by": "llm:deepseek-flash",
+          "allowed_actions": [
+            "call_tool:search_materials"
+          ]
+        }
+      ],
+      "tool_call": {
+        "seq": 2,
+        "step_id": "S2",
+        "tool": "search_materials",
+        "mode": null,
+        "args": {
+          "topic": "秋季新品上市",
+          "need": 1
+        },
+        "outcome": "success",
+        "error_code": null,
+        "retryable": null,
+        "message": "找到 4 条相关素材",
+        "fee": 2,
+        "minutes": 10,
+        "clock_before": "2026-11-02 09:01",
+        "clock_after": "2026-11-02 09:11",
+        "spent_after": 2
+      },
+      "next_action": "call_tool:generate_script"
+    },
+    {
+      "step": 3,
+      "decisions": [
+        {
+          "seq": 3,
+          "trigger": "S2 素材检索：找到 4 条相关素材；下一步是 S3 脚本生成（图文推文脚本）",
+          "action": "call_tool:generate_script",
+          "reason": "当前 P3 保底方案可行（预计 09:33 完成，费用 5，在预算 15 和截止时间 09:40 内），S2 已找到 4 条素材，继续执行 S3 脚本生成。",
+          "decided_by": "llm:deepseek-flash",
+          "allowed_actions": [
+            "call_tool:generate_script"
+          ]
+        }
+      ],
+      "tool_call": {
+        "seq": 3,
+        "step_id": "S3",
+        "tool": "generate_script",
+        "mode": "lite",
+        "args": {
+          "topic": "秋季新品上市",
+          "material_ids": [
+            "M01",
+            "M02",
+            "M03",
+            "M04"
+          ]
+        },
+        "outcome": "success",
+        "error_code": null,
+        "retryable": null,
+        "message": "已生成图文推文脚本",
+        "fee": 3,
+        "minutes": 20,
+        "clock_before": "2026-11-02 09:11",
+        "clock_after": "2026-11-02 09:31",
+        "spent_after": 5
+      },
+      "next_action": "call_tool:save_plan"
+    },
+    {
+      "step": 4,
+      "decisions": [
+        {
+          "seq": 4,
+          "trigger": "S3 脚本生成：已生成图文推文脚本；下一步是 S4 方案保存",
+          "action": "call_tool:save_plan",
+          "reason": "P3 方案可行（预计 09:33 完成、费用 5 在预算 15 内），S3 已成功，继续执行唯一的下一步 S4 保存方案。",
+          "decided_by": "llm:deepseek-flash",
+          "allowed_actions": [
+            "call_tool:save_plan"
+          ]
+        }
+      ],
+      "tool_call": {
+        "seq": 4,
+        "step_id": "S4",
+        "tool": "save_plan",
+        "mode": null,
+        "args": {
+          "plan_id": "CP-2d6bc8a1",
+          "option_id": "P3"
+        },
+        "outcome": "success",
+        "error_code": null,
+        "retryable": null,
+        "message": "方案已保存",
+        "fee": 0,
+        "minutes": 2,
+        "clock_before": "2026-11-02 09:31",
+        "clock_after": "2026-11-02 09:33",
+        "spent_after": 5
+      },
+      "next_action": "结束"
+    }
+  ],
+  "cost": {
+    "budget": 15,
+    "spent": 5,
+    "remaining": 10,
+    "ledger": [
+      {
+        "call_seq": 2,
+        "step_id": "S2",
+        "tool": "search_materials",
+        "mode": null,
+        "fee": 2,
+        "basis": "成功调用按 fee 计费"
+      },
+      {
+        "call_seq": 3,
+        "step_id": "S3",
+        "tool": "generate_script",
+        "mode": "lite",
+        "fee": 3,
+        "basis": "成功调用按 fee 计费"
+      }
+    ],
+    "rule": "费用合计 = 实际发生的工具调用费用之和：成功/部分成功按表中 fee，失败按 fee_on_failure；复用的已成功步骤不再计费。每次调用（含失败）的耗时都计入模拟时钟。"
+  },
+  "time": {
+    "start_time": "2026-11-02 09:00",
+    "clock": "2026-11-02 09:33",
+    "deadline": "2026-11-02 09:40",
+    "minutes_used": 33,
+    "minutes_left": 7
+  },
+  "usage": {
+    "tool_calls": 4,
+    "model_turns": 4,
+    "max_tool_calls": 15,
+    "max_model_turns": 30
+  },
+  "saved_plan": {
+    "result": "created",
+    "plan_id": "CP-2d6bc8a1",
+    "version": 1,
+    "message": "方案已保存"
+  },
+  "plan_document": {
+    "plan_id": "CP-2d6bc8a1",
+    "topic": "秋季新品上市",
+    "option": {
+      "option_id": "P3",
+      "name": "保底方案：图文推文"
+    },
+    "materials": [
+      {
+        "material_id": "M01",
+        "title": "秋季新品开箱视频",
+        "type": "video"
+      },
+      {
+        "material_id": "M02",
+        "title": "秋季穿搭模特图",
+        "type": "image"
+      },
+      {
+        "material_id": "M03",
+        "title": "新品卖点文案库",
+        "type": "copy"
+      },
+      {
+        "material_id": "M04",
+        "title": "门店上市实拍",
+        "type": "video"
+      }
+    ],
+    "script": {
+      "headline": "秋季新品上市：一图看懂活动亮点",
+      "paragraphs": [
+        "亮点 1：秋季新品开箱视频——45 秒开箱，展示新品外观与细节",
+        "亮点 2：秋季穿搭模特图——6 张棚拍模特图，暖色调",
+        "亮点 3：新品卖点文案库——10 条卖点短句，已过法务审核"
+      ],
+      "images": [
+        "M01",
+        "M02",
+        "M03"
+      ],
+      "cta": "点击原文链接参与活动",
+      "format": "图文推文脚本"
+    },
+    "cost": {
+      "total": 5,
+      "budget": 15,
+      "lines": [
+        {
+          "tool": "search_materials",
+          "mode": null,
+          "fee": 2,
+          "basis": "成功调用按 fee 计费"
+        },
+        {
+          "tool": "generate_script",
+          "mode": "lite",
+          "fee": 3,
+          "basis": "成功调用按 fee 计费"
+        }
+      ]
+    },
+    "timeline": {
+      "start_time": "2026-11-02 09:00",
+      "finish_at": "2026-11-02 09:33",
+      "deadline": "2026-11-02 09:40"
+    },
+    "source": {
+      "run_id": "R-2d6bc8a1",
+      "plan_version": 1
+    }
+  },
+  "plan_document_saved": true,
+  "incomplete_reason": null,
+  "gaps": [],
+  "resume_count": 0,
+  "message": "方案已保存（CP-2d6bc8a1，created），费用合计 5 / 预算 15。"
+}

@@ -1,0 +1,16 @@
+{
+  "_note": "工具费用与耗时表（合成）。fee：调用成功或部分成功时收取的模拟费用单位；fee_on_failure：调用失败时收取的费用（如已消耗的算力）；minutes：每次调用（含失败）占用的模拟分钟数。",
+  "tools": {
+    "estimate_cost": {"name": "成本估算", "fee": 0, "fee_on_failure": 0, "minutes": 1},
+    "search_materials": {"name": "素材检索", "fee": 2, "fee_on_failure": 0, "minutes": 10},
+    "generate_script": {
+      "name": "脚本生成",
+      "modes": {
+        "premium": {"name": "AI 分镜视频脚本", "fee": 10, "fee_on_failure": 2, "minutes": 120, "min_materials": 3},
+        "standard": {"name": "标准短视频脚本", "fee": 6, "fee_on_failure": 1, "minutes": 60, "min_materials": 2},
+        "lite": {"name": "图文推文脚本", "fee": 3, "fee_on_failure": 0, "minutes": 20, "min_materials": 1}
+      }
+    },
+    "save_plan": {"name": "方案保存", "fee": 0, "fee_on_failure": 0, "minutes": 2}
+  }
+}

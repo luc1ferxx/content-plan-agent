@@ -1,0 +1,890 @@
+{
+  "run_id": "R-43ea252c",
+  "request_key": "43ea252c1db9c65c",
+  "status": "completed",
+  "stop_code": null,
+  "repeat": false,
+  "policy": "llm:deepseek-flash",
+  "mode": "real_model",
+  "boundary": null,
+  "request": {
+    "topic": "双十一大促预热",
+    "budget": 14,
+    "deadline": "2026-11-05 18:00",
+    "start_time": "2026-11-05 09:00",
+    "request_id": null,
+    "faults": {
+      "generate_script:premium": "fail_once"
+    },
+    "limits": {}
+  },
+  "plan": {
+    "version": 1,
+    "option_id": "P1",
+    "option_name": "旗舰方案：AI 分镜短视频",
+    "steps": [
+      {
+        "step_id": "S1",
+        "name": "成本估算",
+        "tool": "estimate_cost",
+        "mode": null,
+        "depends_on": [],
+        "status": "succeeded",
+        "attempts": 1,
+        "fee_charged": 0,
+        "note": "预计合计 12 ≤ 预算 14，预计 2026-11-05 11:13 完成 ≤ 截止",
+        "reused": false
+      },
+      {
+        "step_id": "S2",
+        "name": "素材检索",
+        "tool": "search_materials",
+        "mode": null,
+        "depends_on": [
+          "S1"
+        ],
+        "status": "succeeded",
+        "attempts": 1,
+        "fee_charged": 2,
+        "note": null,
+        "reused": false
+      },
+      {
+        "step_id": "S3",
+        "name": "脚本生成",
+        "tool": "generate_script",
+        "mode": "premium",
+        "depends_on": [
+          "S2",
+          "S1"
+        ],
+        "status": "succeeded",
+        "attempts": 2,
+        "fee_charged": 12,
+        "note": "第 1 次尝试失败（TIMEOUT），重试",
+        "reused": false
+      },
+      {
+        "step_id": "S4",
+        "name": "方案保存",
+        "tool": "save_plan",
+        "mode": null,
+        "depends_on": [
+          "S3",
+          "S1"
+        ],
+        "status": "succeeded",
+        "attempts": 1,
+        "fee_charged": 0,
+        "note": null,
+        "reused": false
+      }
+    ]
+  },
+  "plan_history": [
+    {
+      "version": 1,
+      "option_id": "P1",
+      "option_name": "旗舰方案：AI 分镜短视频",
+      "reason": "初始规划且预算14尚未花费，P1优先级最高（效果最好），先选P1由成本估算给出费用和耗时",
+      "reused_steps": []
+    }
+  ],
+  "steps": [
+    {
+      "step_id": "S1",
+      "plan_version": 1,
+      "kind": "estimate",
+      "name": "成本估算",
+      "tool": "estimate_cost",
+      "mode": null,
+      "depends_on": [],
+      "status": "succeeded",
+      "attempts": 1,
+      "fee_charged": 0,
+      "minutes_spent": 1,
+      "result": {
+        "option_id": "P1",
+        "lines": [
+          {
+            "tool": "estimate_cost",
+            "mode": null,
+            "fee": 0,
+            "minutes": 1
+          },
+          {
+            "tool": "search_materials",
+            "mode": null,
+            "fee": 2,
+            "minutes": 10
+          },
+          {
+            "tool": "generate_script",
+            "mode": "premium",
+            "fee": 10,
+            "minutes": 120
+          },
+          {
+            "tool": "save_plan",
+            "mode": null,
+            "fee": 0,
+            "minutes": 2
+          }
+        ],
+        "spent_before": 0,
+        "remaining_fee": 12,
+        "remaining_minutes": 133,
+        "projected_total_fee": 12,
+        "projected_finish": "2026-11-05 11:13"
+      },
+      "error": null,
+      "verdict": "pass",
+      "note": "预计合计 12 ≤ 预算 14，预计 2026-11-05 11:13 完成 ≤ 截止"
+    },
+    {
+      "step_id": "S2",
+      "plan_version": 1,
+      "kind": "search",
+      "name": "素材检索",
+      "tool": "search_materials",
+      "mode": null,
+      "depends_on": [
+        "S1"
+      ],
+      "status": "succeeded",
+      "attempts": 1,
+      "fee_charged": 2,
+      "minutes_spent": 10,
+      "result": {
+        "topic": "双十一大促预热",
+        "need": 3,
+        "found": 4,
+        "materials": [
+          {
+            "material_id": "M05",
+            "title": "双十一会场主视觉",
+            "type": "image",
+            "tags": [
+              "双十一",
+              "主视觉"
+            ],
+            "summary": "会场 KV，含横竖两版"
+          },
+          {
+            "material_id": "M07",
+            "title": "大促直播切片",
+            "type": "video",
+            "tags": [
+              "大促",
+              "直播"
+            ],
+            "summary": "往期大促直播高光切片 60 秒"
+          },
+          {
+            "material_id": "M12",
+            "title": "预热倒计时海报",
+            "type": "image",
+            "tags": [
+              "预热",
+              "倒计时"
+            ],
+            "summary": "3/2/1 天倒计时海报模板"
+          },
+          {
+            "material_id": "M06",
+            "title": "双十一满减规则说明",
+            "type": "copy",
+            "tags": [
+              "双十一",
+              "满减"
+            ],
+            "summary": "满减与叠券规则文案"
+          }
+        ]
+      },
+      "error": null,
+      "verdict": null,
+      "note": null
+    },
+    {
+      "step_id": "S3",
+      "plan_version": 1,
+      "kind": "script",
+      "name": "脚本生成",
+      "tool": "generate_script",
+      "mode": "premium",
+      "depends_on": [
+        "S2",
+        "S1"
+      ],
+      "status": "succeeded",
+      "attempts": 2,
+      "fee_charged": 12,
+      "minutes_spent": 240,
+      "result": {
+        "title": "双十一大促预热｜45 秒 AI 分镜短视频",
+        "duration_sec": 45,
+        "shots": [
+          {
+            "shot": 1,
+            "purpose": "开场钩子",
+            "seconds": 3,
+            "material_id": "M05",
+            "visual": "双十一会场主视觉",
+            "voiceover": "3 秒抛出「双十一大促预热」的核心看点"
+          },
+          {
+            "shot": 2,
+            "purpose": "核心卖点",
+            "seconds": 10,
+            "material_id": "M07",
+            "visual": "大促直播切片",
+            "voiceover": "特写大促直播切片，讲清一个最打动人的卖点"
+          },
+          {
+            "shot": 3,
+            "purpose": "使用场景",
+            "seconds": 12,
+            "material_id": "M12",
+            "visual": "预热倒计时海报",
+            "voiceover": "场景化演示，突出预热、倒计时"
+          },
+          {
+            "shot": 4,
+            "purpose": "细节与口碑",
+            "seconds": 10,
+            "material_id": "M06",
+            "visual": "双十一满减规则说明",
+            "voiceover": "用细节和真实反馈建立信任"
+          },
+          {
+            "shot": 5,
+            "purpose": "行动号召",
+            "seconds": 10,
+            "material_id": "M05",
+            "visual": "双十一会场主视觉",
+            "voiceover": "引导点击/预约，强调活动时效"
+          }
+        ],
+        "cta": "点击了解「双十一大促预热」活动详情",
+        "format": "AI 分镜视频脚本"
+      },
+      "error": null,
+      "verdict": null,
+      "note": "第 1 次尝试失败（TIMEOUT），重试"
+    },
+    {
+      "step_id": "S4",
+      "plan_version": 1,
+      "kind": "save",
+      "name": "方案保存",
+      "tool": "save_plan",
+      "mode": null,
+      "depends_on": [
+        "S3",
+        "S1"
+      ],
+      "status": "succeeded",
+      "attempts": 1,
+      "fee_charged": 0,
+      "minutes_spent": 2,
+      "result": {
+        "result": "created",
+        "plan_id": "CP-43ea252c",
+        "version": 1,
+        "message": "方案已保存"
+      },
+      "error": null,
+      "verdict": null,
+      "note": null
+    }
+  ],
+  "tool_calls": [
+    {
+      "seq": 1,
+      "step_id": "S1",
+      "tool": "estimate_cost",
+      "mode": null,
+      "args": {
+        "option_id": "P1",
+        "spent": 0,
+        "clock": "2026-11-05 09:00",
+        "items": [
+          "estimate_cost",
+          "search_materials",
+          "generate_script:premium",
+          "save_plan"
+        ]
+      },
+      "outcome": "success",
+      "error_code": null,
+      "retryable": null,
+      "message": "P1 预计合计 12，预计 2026-11-05 11:13 完成",
+      "fee": 0,
+      "minutes": 1,
+      "clock_before": "2026-11-05 09:00",
+      "clock_after": "2026-11-05 09:01",
+      "spent_after": 0
+    },
+    {
+      "seq": 2,
+      "step_id": "S2",
+      "tool": "search_materials",
+      "mode": null,
+      "args": {
+        "topic": "双十一大促预热",
+        "need": 3
+      },
+      "outcome": "success",
+      "error_code": null,
+      "retryable": null,
+      "message": "找到 4 条相关素材",
+      "fee": 2,
+      "minutes": 10,
+      "clock_before": "2026-11-05 09:01",
+      "clock_after": "2026-11-05 09:11",
+      "spent_after": 2
+    },
+    {
+      "seq": 3,
+      "step_id": "S3",
+      "tool": "generate_script",
+      "mode": "premium",
+      "args": {
+        "topic": "双十一大促预热",
+        "material_ids": [
+          "M05",
+          "M07",
+          "M12",
+          "M06"
+        ]
+      },
+      "outcome": "error",
+      "error_code": "TIMEOUT",
+      "retryable": true,
+      "message": "[故障注入] 脚本生成（AI 分镜视频脚本）首次调用超时，可重试",
+      "fee": 2,
+      "minutes": 120,
+      "clock_before": "2026-11-05 09:11",
+      "clock_after": "2026-11-05 11:11",
+      "spent_after": 4
+    },
+    {
+      "seq": 4,
+      "step_id": "S3",
+      "tool": "generate_script",
+      "mode": "premium",
+      "args": {
+        "topic": "双十一大促预热",
+        "material_ids": [
+          "M05",
+          "M07",
+          "M12",
+          "M06"
+        ]
+      },
+      "outcome": "success",
+      "error_code": null,
+      "retryable": null,
+      "message": "已生成AI 分镜视频脚本",
+      "fee": 10,
+      "minutes": 120,
+      "clock_before": "2026-11-05 11:11",
+      "clock_after": "2026-11-05 13:11",
+      "spent_after": 14
+    },
+    {
+      "seq": 5,
+      "step_id": "S4",
+      "tool": "save_plan",
+      "mode": null,
+      "args": {
+        "plan_id": "CP-43ea252c",
+        "option_id": "P1"
+      },
+      "outcome": "success",
+      "error_code": null,
+      "retryable": null,
+      "message": "方案已保存",
+      "fee": 0,
+      "minutes": 2,
+      "clock_before": "2026-11-05 13:11",
+      "clock_after": "2026-11-05 13:13",
+      "spent_after": 14
+    }
+  ],
+  "decisions": [
+    {
+      "seq": 1,
+      "after_call": 0,
+      "event_type": "plan",
+      "trigger": "初始规划",
+      "action": "plan",
+      "option_id": "P1",
+      "tool": null,
+      "reason": "初始规划且预算14尚未花费，P1优先级最高（效果最好），先选P1由成本估算给出费用和耗时",
+      "policy": "llm:deepseek-flash",
+      "model_call": {
+        "response_id": "3c6f831f-f2bf-4cdf-9bb3-4f5134e19b76",
+        "model": "deepseek-flash",
+        "total_tokens": 961
+      },
+      "allowed_actions": [
+        "plan:P1",
+        "plan:P2",
+        "plan:P3"
+      ]
+    },
+    {
+      "seq": 2,
+      "after_call": 1,
+      "event_type": "step_ready",
+      "trigger": "S1 成本估算：预计合计 12 ≤ 预算 14，预计 2026-11-05 11:13 完成 ≤ 截止；下一步是 S2 素材检索",
+      "action": "call_tool",
+      "option_id": null,
+      "tool": "search_materials",
+      "reason": "P1 成本估算 12≤预算 14、11:13 完成≤截止，当前可行且优先级最高，继续执行 S2 素材检索。",
+      "policy": "llm:deepseek-flash",
+      "model_call": {
+        "response_id": "09655dd4-8269-4295-b600-65cfd150e006",
+        "model": "deepseek-flash",
+        "total_tokens": 1306
+      },
+      "allowed_actions": [
+        "call_tool:search_materials",
+        "switch_option:P2",
+        "switch_option:P3"
+      ]
+    },
+    {
+      "seq": 3,
+      "after_call": 2,
+      "event_type": "step_ready",
+      "trigger": "S2 素材检索：找到 4 条相关素材；下一步是 S3 脚本生成（AI 分镜视频脚本）",
+      "action": "call_tool",
+      "option_id": null,
+      "tool": "generate_script",
+      "reason": "P1 当前可行，预计总费用 12 未超预算 14、11:13 前可完成，且素材已找到 4 条满足 premium 门槛 3 条，继续执行 S3 脚本生成。",
+      "policy": "llm:deepseek-flash",
+      "model_call": {
+        "response_id": "7c577131-1230-4269-81aa-bd7260aa1544",
+        "model": "deepseek-flash",
+        "total_tokens": 1323
+      },
+      "allowed_actions": [
+        "call_tool:generate_script",
+        "switch_option:P2",
+        "switch_option:P3"
+      ]
+    },
+    {
+      "seq": 4,
+      "after_call": 3,
+      "event_type": "tool_error",
+      "trigger": "S3 脚本生成（AI 分镜视频脚本）失败：TIMEOUT（可重试，[故障注入] 脚本生成（AI 分镜视频脚本）首次调用超时，可重试）",
+      "action": "retry",
+      "option_id": null,
+      "tool": null,
+      "reason": "S3 超时可重试，重试后 P1 预计总费用 14 不超预算、13:13 完成早于 18:00 截止，优先保住效果最好的 P1",
+      "policy": "llm:deepseek-flash",
+      "model_call": {
+        "response_id": "6558231c-22b4-459e-9833-382cd191c4b2",
+        "model": "deepseek-flash",
+        "total_tokens": 1391
+      },
+      "allowed_actions": [
+        "retry",
+        "switch_option:P2",
+        "switch_option:P3"
+      ]
+    },
+    {
+      "seq": 5,
+      "after_call": 4,
+      "event_type": "step_ready",
+      "trigger": "S3 脚本生成：已生成AI 分镜视频脚本；下一步是 S4 方案保存",
+      "action": "call_tool",
+      "option_id": null,
+      "tool": "save_plan",
+      "reason": "P1 仍 feasible（预计合计 14 ≤ 预算 14、13:13 完成远早于截止），S3 已成功生成脚本，继续执行最后一步 S4 保存方案",
+      "policy": "llm:deepseek-flash",
+      "model_call": {
+        "response_id": "a79c9c7f-70a2-4026-b912-ba1391fc4787",
+        "model": "deepseek-flash",
+        "total_tokens": 1329
+      },
+      "allowed_actions": [
+        "call_tool:save_plan"
+      ]
+    }
+  ],
+  "trace": [
+    {
+      "step": 1,
+      "decisions": [
+        {
+          "seq": 1,
+          "trigger": "初始规划",
+          "action": "plan:P1",
+          "reason": "初始规划且预算14尚未花费，P1优先级最高（效果最好），先选P1由成本估算给出费用和耗时",
+          "decided_by": "llm:deepseek-flash",
+          "allowed_actions": [
+            "plan:P1",
+            "plan:P2",
+            "plan:P3"
+          ]
+        }
+      ],
+      "tool_call": {
+        "seq": 1,
+        "step_id": "S1",
+        "tool": "estimate_cost",
+        "mode": null,
+        "args": {
+          "option_id": "P1",
+          "spent": 0,
+          "clock": "2026-11-05 09:00",
+          "items": [
+            "estimate_cost",
+            "search_materials",
+            "generate_script:premium",
+            "save_plan"
+          ]
+        },
+        "outcome": "success",
+        "error_code": null,
+        "retryable": null,
+        "message": "P1 预计合计 12，预计 2026-11-05 11:13 完成",
+        "fee": 0,
+        "minutes": 1,
+        "clock_before": "2026-11-05 09:00",
+        "clock_after": "2026-11-05 09:01",
+        "spent_after": 0
+      },
+      "next_action": "call_tool:search_materials"
+    },
+    {
+      "step": 2,
+      "decisions": [
+        {
+          "seq": 2,
+          "trigger": "S1 成本估算：预计合计 12 ≤ 预算 14，预计 2026-11-05 11:13 完成 ≤ 截止；下一步是 S2 素材检索",
+          "action": "call_tool:search_materials",
+          "reason": "P1 成本估算 12≤预算 14、11:13 完成≤截止，当前可行且优先级最高，继续执行 S2 素材检索。",
+          "decided_by": "llm:deepseek-flash",
+          "allowed_actions": [
+            "call_tool:search_materials",
+            "switch_option:P2",
+            "switch_option:P3"
+          ]
+        }
+      ],
+      "tool_call": {
+        "seq": 2,
+        "step_id": "S2",
+        "tool": "search_materials",
+        "mode": null,
+        "args": {
+          "topic": "双十一大促预热",
+          "need": 3
+        },
+        "outcome": "success",
+        "error_code": null,
+        "retryable": null,
+        "message": "找到 4 条相关素材",
+        "fee": 2,
+        "minutes": 10,
+        "clock_before": "2026-11-05 09:01",
+        "clock_after": "2026-11-05 09:11",
+        "spent_after": 2
+      },
+      "next_action": "call_tool:generate_script"
+    },
+    {
+      "step": 3,
+      "decisions": [
+        {
+          "seq": 3,
+          "trigger": "S2 素材检索：找到 4 条相关素材；下一步是 S3 脚本生成（AI 分镜视频脚本）",
+          "action": "call_tool:generate_script",
+          "reason": "P1 当前可行，预计总费用 12 未超预算 14、11:13 前可完成，且素材已找到 4 条满足 premium 门槛 3 条，继续执行 S3 脚本生成。",
+          "decided_by": "llm:deepseek-flash",
+          "allowed_actions": [
+            "call_tool:generate_script",
+            "switch_option:P2",
+            "switch_option:P3"
+          ]
+        }
+      ],
+      "tool_call": {
+        "seq": 3,
+        "step_id": "S3",
+        "tool": "generate_script",
+        "mode": "premium",
+        "args": {
+          "topic": "双十一大促预热",
+          "material_ids": [
+            "M05",
+            "M07",
+            "M12",
+            "M06"
+          ]
+        },
+        "outcome": "error",
+        "error_code": "TIMEOUT",
+        "retryable": true,
+        "message": "[故障注入] 脚本生成（AI 分镜视频脚本）首次调用超时，可重试",
+        "fee": 2,
+        "minutes": 120,
+        "clock_before": "2026-11-05 09:11",
+        "clock_after": "2026-11-05 11:11",
+        "spent_after": 4
+      },
+      "next_action": "retry"
+    },
+    {
+      "step": 4,
+      "decisions": [
+        {
+          "seq": 4,
+          "trigger": "S3 脚本生成（AI 分镜视频脚本）失败：TIMEOUT（可重试，[故障注入] 脚本生成（AI 分镜视频脚本）首次调用超时，可重试）",
+          "action": "retry",
+          "reason": "S3 超时可重试，重试后 P1 预计总费用 14 不超预算、13:13 完成早于 18:00 截止，优先保住效果最好的 P1",
+          "decided_by": "llm:deepseek-flash",
+          "allowed_actions": [
+            "retry",
+            "switch_option:P2",
+            "switch_option:P3"
+          ]
+        }
+      ],
+      "tool_call": {
+        "seq": 4,
+        "step_id": "S3",
+        "tool": "generate_script",
+        "mode": "premium",
+        "args": {
+          "topic": "双十一大促预热",
+          "material_ids": [
+            "M05",
+            "M07",
+            "M12",
+            "M06"
+          ]
+        },
+        "outcome": "success",
+        "error_code": null,
+        "retryable": null,
+        "message": "已生成AI 分镜视频脚本",
+        "fee": 10,
+        "minutes": 120,
+        "clock_before": "2026-11-05 11:11",
+        "clock_after": "2026-11-05 13:11",
+        "spent_after": 14
+      },
+      "next_action": "call_tool:save_plan"
+    },
+    {
+      "step": 5,
+      "decisions": [
+        {
+          "seq": 5,
+          "trigger": "S3 脚本生成：已生成AI 分镜视频脚本；下一步是 S4 方案保存",
+          "action": "call_tool:save_plan",
+          "reason": "P1 仍 feasible（预计合计 14 ≤ 预算 14、13:13 完成远早于截止），S3 已成功生成脚本，继续执行最后一步 S4 保存方案",
+          "decided_by": "llm:deepseek-flash",
+          "allowed_actions": [
+            "call_tool:save_plan"
+          ]
+        }
+      ],
+      "tool_call": {
+        "seq": 5,
+        "step_id": "S4",
+        "tool": "save_plan",
+        "mode": null,
+        "args": {
+          "plan_id": "CP-43ea252c",
+          "option_id": "P1"
+        },
+        "outcome": "success",
+        "error_code": null,
+        "retryable": null,
+        "message": "方案已保存",
+        "fee": 0,
+        "minutes": 2,
+        "clock_before": "2026-11-05 13:11",
+        "clock_after": "2026-11-05 13:13",
+        "spent_after": 14
+      },
+      "next_action": "结束"
+    }
+  ],
+  "cost": {
+    "budget": 14,
+    "spent": 14,
+    "remaining": 0,
+    "ledger": [
+      {
+        "call_seq": 2,
+        "step_id": "S2",
+        "tool": "search_materials",
+        "mode": null,
+        "fee": 2,
+        "basis": "成功调用按 fee 计费"
+      },
+      {
+        "call_seq": 3,
+        "step_id": "S3",
+        "tool": "generate_script",
+        "mode": "premium",
+        "fee": 2,
+        "basis": "失败调用按 fee_on_failure 计费"
+      },
+      {
+        "call_seq": 4,
+        "step_id": "S3",
+        "tool": "generate_script",
+        "mode": "premium",
+        "fee": 10,
+        "basis": "成功调用按 fee 计费"
+      }
+    ],
+    "rule": "费用合计 = 实际发生的工具调用费用之和：成功/部分成功按表中 fee，失败按 fee_on_failure；复用的已成功步骤不再计费。每次调用（含失败）的耗时都计入模拟时钟。"
+  },
+  "time": {
+    "start_time": "2026-11-05 09:00",
+    "clock": "2026-11-05 13:13",
+    "deadline": "2026-11-05 18:00",
+    "minutes_used": 253,
+    "minutes_left": 287
+  },
+  "usage": {
+    "tool_calls": 5,
+    "model_turns": 5,
+    "max_tool_calls": 15,
+    "max_model_turns": 30
+  },
+  "saved_plan": {
+    "result": "created",
+    "plan_id": "CP-43ea252c",
+    "version": 1,
+    "message": "方案已保存"
+  },
+  "plan_document": {
+    "plan_id": "CP-43ea252c",
+    "topic": "双十一大促预热",
+    "option": {
+      "option_id": "P1",
+      "name": "旗舰方案：AI 分镜短视频"
+    },
+    "materials": [
+      {
+        "material_id": "M05",
+        "title": "双十一会场主视觉",
+        "type": "image"
+      },
+      {
+        "material_id": "M07",
+        "title": "大促直播切片",
+        "type": "video"
+      },
+      {
+        "material_id": "M12",
+        "title": "预热倒计时海报",
+        "type": "image"
+      },
+      {
+        "material_id": "M06",
+        "title": "双十一满减规则说明",
+        "type": "copy"
+      }
+    ],
+    "script": {
+      "title": "双十一大促预热｜45 秒 AI 分镜短视频",
+      "duration_sec": 45,
+      "shots": [
+        {
+          "shot": 1,
+          "purpose": "开场钩子",
+          "seconds": 3,
+          "material_id": "M05",
+          "visual": "双十一会场主视觉",
+          "voiceover": "3 秒抛出「双十一大促预热」的核心看点"
+        },
+        {
+          "shot": 2,
+          "purpose": "核心卖点",
+          "seconds": 10,
+          "material_id": "M07",
+          "visual": "大促直播切片",
+          "voiceover": "特写大促直播切片，讲清一个最打动人的卖点"
+        },
+        {
+          "shot": 3,
+          "purpose": "使用场景",
+          "seconds": 12,
+          "material_id": "M12",
+          "visual": "预热倒计时海报",
+          "voiceover": "场景化演示，突出预热、倒计时"
+        },
+        {
+          "shot": 4,
+          "purpose": "细节与口碑",
+          "seconds": 10,
+          "material_id": "M06",
+          "visual": "双十一满减规则说明",
+          "voiceover": "用细节和真实反馈建立信任"
+        },
+        {
+          "shot": 5,
+          "purpose": "行动号召",
+          "seconds": 10,
+          "material_id": "M05",
+          "visual": "双十一会场主视觉",
+          "voiceover": "引导点击/预约，强调活动时效"
+        }
+      ],
+      "cta": "点击了解「双十一大促预热」活动详情",
+      "format": "AI 分镜视频脚本"
+    },
+    "cost": {
+      "total": 14,
+      "budget": 14,
+      "lines": [
+        {
+          "tool": "search_materials",
+          "mode": null,
+          "fee": 2,
+          "basis": "成功调用按 fee 计费"
+        },
+        {
+          "tool": "generate_script",
+          "mode": "premium",
+          "fee": 2,
+          "basis": "失败调用按 fee_on_failure 计费"
+        },
+        {
+          "tool": "generate_script",
+          "mode": "premium",
+          "fee": 10,
+          "basis": "成功调用按 fee 计费"
+        }
+      ]
+    },
+    "timeline": {
+      "start_time": "2026-11-05 09:00",
+      "finish_at": "2026-11-05 13:13",
+      "deadline": "2026-11-05 18:00"
+    },
+    "source": {
+      "run_id": "R-43ea252c",
+      "plan_version": 1
+    }
+  },
+  "plan_document_saved": true,
+  "incomplete_reason": null,
+  "gaps": [],
+  "resume_count": 0,
+  "message": "方案已保存（CP-43ea252c，created），费用合计 14 / 预算 14。"
+}

@@ -1,0 +1,1057 @@
+{
+  "run_id": "R-f14eb947",
+  "request_key": "f14eb9475600ef07",
+  "status": "completed",
+  "stop_code": null,
+  "repeat": false,
+  "policy": "llm:deepseek-flash",
+  "mode": "real_model",
+  "boundary": null,
+  "request": {
+    "topic": "秋季新品上市",
+    "budget": 20,
+    "deadline": "2026-11-02 18:00",
+    "start_time": "2026-11-02 09:00",
+    "request_id": null,
+    "faults": {},
+    "limits": {}
+  },
+  "plan": {
+    "version": 2,
+    "option_id": "P1",
+    "option_name": "旗舰方案：AI 分镜短视频",
+    "steps": [
+      {
+        "step_id": "S5",
+        "name": "成本估算",
+        "tool": "estimate_cost",
+        "mode": null,
+        "depends_on": [],
+        "status": "succeeded",
+        "attempts": 1,
+        "fee_charged": 0,
+        "note": "预计合计 12 ≤ 预算 20，预计 2026-11-02 11:16 完成 ≤ 截止",
+        "reused": false
+      },
+      {
+        "step_id": "S2",
+        "name": "素材检索",
+        "tool": "search_materials",
+        "mode": null,
+        "depends_on": [
+          "S1"
+        ],
+        "status": "succeeded",
+        "attempts": 1,
+        "fee_charged": 2,
+        "note": "已成功，P1 直接复用",
+        "reused": true
+      },
+      {
+        "step_id": "S3",
+        "name": "脚本生成",
+        "tool": "generate_script",
+        "mode": "premium",
+        "depends_on": [
+          "S2",
+          "S1"
+        ],
+        "status": "succeeded",
+        "attempts": 1,
+        "fee_charged": 10,
+        "note": null,
+        "reused": true
+      },
+      {
+        "step_id": "S6",
+        "name": "方案保存",
+        "tool": "save_plan",
+        "mode": null,
+        "depends_on": [
+          "S3",
+          "S5"
+        ],
+        "status": "succeeded",
+        "attempts": 1,
+        "fee_charged": 0,
+        "note": null,
+        "reused": false
+      }
+    ]
+  },
+  "plan_history": [
+    {
+      "version": 1,
+      "option_id": "P1",
+      "option_name": "旗舰方案：AI 分镜短视频",
+      "reason": "初始规划且预算20、剩余540分钟，优先选择效果最好的P1旗舰方案，先由成本估算确认可行性与费用。",
+      "reused_steps": []
+    },
+    {
+      "version": 2,
+      "option_id": "P1",
+      "option_name": "旗舰方案：AI 分镜短视频",
+      "reason": "P1 的 S1-S3 均已完成且结果可复用，仅 S4 保存失败，剩余预算 8 单位可重试保存，故保留优先级最高的 P1",
+      "reused_steps": [
+        "S2",
+        "S3"
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "step_id": "S1",
+      "plan_version": 1,
+      "kind": "estimate",
+      "name": "成本估算",
+      "tool": "estimate_cost",
+      "mode": null,
+      "depends_on": [],
+      "status": "succeeded",
+      "attempts": 1,
+      "fee_charged": 0,
+      "minutes_spent": 1,
+      "result": {
+        "option_id": "P1",
+        "lines": [
+          {
+            "tool": "estimate_cost",
+            "mode": null,
+            "fee": 0,
+            "minutes": 1
+          },
+          {
+            "tool": "search_materials",
+            "mode": null,
+            "fee": 2,
+            "minutes": 10
+          },
+          {
+            "tool": "generate_script",
+            "mode": "premium",
+            "fee": 10,
+            "minutes": 120
+          },
+          {
+            "tool": "save_plan",
+            "mode": null,
+            "fee": 0,
+            "minutes": 2
+          }
+        ],
+        "spent_before": 0,
+        "remaining_fee": 12,
+        "remaining_minutes": 133,
+        "projected_total_fee": 12,
+        "projected_finish": "2026-11-02 11:13"
+      },
+      "error": null,
+      "verdict": "pass",
+      "note": "预计合计 12 ≤ 预算 20，预计 2026-11-02 11:13 完成 ≤ 截止"
+    },
+    {
+      "step_id": "S2",
+      "plan_version": 1,
+      "kind": "search",
+      "name": "素材检索",
+      "tool": "search_materials",
+      "mode": null,
+      "depends_on": [
+        "S1"
+      ],
+      "status": "succeeded",
+      "attempts": 1,
+      "fee_charged": 2,
+      "minutes_spent": 10,
+      "result": {
+        "topic": "秋季新品上市",
+        "need": 3,
+        "found": 4,
+        "materials": [
+          {
+            "material_id": "M01",
+            "title": "秋季新品开箱视频",
+            "type": "video",
+            "tags": [
+              "秋季",
+              "新品",
+              "开箱"
+            ],
+            "summary": "45 秒开箱，展示新品外观与细节"
+          },
+          {
+            "material_id": "M02",
+            "title": "秋季穿搭模特图",
+            "type": "image",
+            "tags": [
+              "秋季",
+              "穿搭"
+            ],
+            "summary": "6 张棚拍模特图，暖色调"
+          },
+          {
+            "material_id": "M03",
+            "title": "新品卖点文案库",
+            "type": "copy",
+            "tags": [
+              "新品",
+              "卖点"
+            ],
+            "summary": "10 条卖点短句，已过法务审核"
+          },
+          {
+            "material_id": "M04",
+            "title": "门店上市实拍",
+            "type": "video",
+            "tags": [
+              "上市",
+              "门店"
+            ],
+            "summary": "门店陈列与客流实拍 30 秒"
+          }
+        ]
+      },
+      "error": null,
+      "verdict": null,
+      "note": "已成功，P1 直接复用"
+    },
+    {
+      "step_id": "S3",
+      "plan_version": 1,
+      "kind": "script",
+      "name": "脚本生成",
+      "tool": "generate_script",
+      "mode": "premium",
+      "depends_on": [
+        "S2",
+        "S1"
+      ],
+      "status": "succeeded",
+      "attempts": 1,
+      "fee_charged": 10,
+      "minutes_spent": 120,
+      "result": {
+        "title": "秋季新品上市｜45 秒 AI 分镜短视频",
+        "duration_sec": 45,
+        "shots": [
+          {
+            "shot": 1,
+            "purpose": "开场钩子",
+            "seconds": 3,
+            "material_id": "M01",
+            "visual": "秋季新品开箱视频",
+            "voiceover": "3 秒抛出「秋季新品上市」的核心看点"
+          },
+          {
+            "shot": 2,
+            "purpose": "核心卖点",
+            "seconds": 10,
+            "material_id": "M02",
+            "visual": "秋季穿搭模特图",
+            "voiceover": "特写秋季穿搭模特图，讲清一个最打动人的卖点"
+          },
+          {
+            "shot": 3,
+            "purpose": "使用场景",
+            "seconds": 12,
+            "material_id": "M03",
+            "visual": "新品卖点文案库",
+            "voiceover": "场景化演示，突出新品、卖点"
+          },
+          {
+            "shot": 4,
+            "purpose": "细节与口碑",
+            "seconds": 10,
+            "material_id": "M04",
+            "visual": "门店上市实拍",
+            "voiceover": "用细节和真实反馈建立信任"
+          },
+          {
+            "shot": 5,
+            "purpose": "行动号召",
+            "seconds": 10,
+            "material_id": "M01",
+            "visual": "秋季新品开箱视频",
+            "voiceover": "引导点击/预约，强调活动时效"
+          }
+        ],
+        "cta": "点击了解「秋季新品上市」活动详情",
+        "format": "AI 分镜视频脚本"
+      },
+      "error": null,
+      "verdict": null,
+      "note": null
+    },
+    {
+      "step_id": "S4",
+      "plan_version": 1,
+      "kind": "save",
+      "name": "方案保存",
+      "tool": "save_plan",
+      "mode": null,
+      "depends_on": [
+        "S3",
+        "S1"
+      ],
+      "status": "failed",
+      "attempts": 1,
+      "fee_charged": 0,
+      "minutes_spent": 2,
+      "result": null,
+      "error": {
+        "code": "STORAGE_READ_ONLY",
+        "retryable": false,
+        "message": "[故障注入] 方案保存不可用（STORAGE_READ_ONLY），本次没有产生任何结果"
+      },
+      "verdict": null,
+      "note": null
+    },
+    {
+      "step_id": "S5",
+      "plan_version": 2,
+      "kind": "estimate",
+      "name": "成本估算",
+      "tool": "estimate_cost",
+      "mode": null,
+      "depends_on": [],
+      "status": "succeeded",
+      "attempts": 1,
+      "fee_charged": 0,
+      "minutes_spent": 1,
+      "result": {
+        "option_id": "P1",
+        "lines": [
+          {
+            "tool": "estimate_cost",
+            "mode": null,
+            "fee": 0,
+            "minutes": 1
+          },
+          {
+            "tool": "save_plan",
+            "mode": null,
+            "fee": 0,
+            "minutes": 2
+          }
+        ],
+        "spent_before": 12,
+        "remaining_fee": 0,
+        "remaining_minutes": 3,
+        "projected_total_fee": 12,
+        "projected_finish": "2026-11-02 11:16"
+      },
+      "error": null,
+      "verdict": "pass",
+      "note": "预计合计 12 ≤ 预算 20，预计 2026-11-02 11:16 完成 ≤ 截止"
+    },
+    {
+      "step_id": "S6",
+      "plan_version": 2,
+      "kind": "save",
+      "name": "方案保存",
+      "tool": "save_plan",
+      "mode": null,
+      "depends_on": [
+        "S3",
+        "S5"
+      ],
+      "status": "succeeded",
+      "attempts": 1,
+      "fee_charged": 0,
+      "minutes_spent": 2,
+      "result": {
+        "result": "created",
+        "plan_id": "CP-f14eb947",
+        "version": 1,
+        "message": "方案已保存"
+      },
+      "error": null,
+      "verdict": null,
+      "note": null
+    }
+  ],
+  "tool_calls": [
+    {
+      "seq": 1,
+      "step_id": "S1",
+      "tool": "estimate_cost",
+      "mode": null,
+      "args": {
+        "option_id": "P1",
+        "spent": 0,
+        "clock": "2026-11-02 09:00",
+        "items": [
+          "estimate_cost",
+          "search_materials",
+          "generate_script:premium",
+          "save_plan"
+        ]
+      },
+      "outcome": "success",
+      "error_code": null,
+      "retryable": null,
+      "message": "P1 预计合计 12，预计 2026-11-02 11:13 完成",
+      "fee": 0,
+      "minutes": 1,
+      "clock_before": "2026-11-02 09:00",
+      "clock_after": "2026-11-02 09:01",
+      "spent_after": 0
+    },
+    {
+      "seq": 2,
+      "step_id": "S2",
+      "tool": "search_materials",
+      "mode": null,
+      "args": {
+        "topic": "秋季新品上市",
+        "need": 3
+      },
+      "outcome": "success",
+      "error_code": null,
+      "retryable": null,
+      "message": "找到 4 条相关素材",
+      "fee": 2,
+      "minutes": 10,
+      "clock_before": "2026-11-02 09:01",
+      "clock_after": "2026-11-02 09:11",
+      "spent_after": 2
+    },
+    {
+      "seq": 3,
+      "step_id": "S3",
+      "tool": "generate_script",
+      "mode": "premium",
+      "args": {
+        "topic": "秋季新品上市",
+        "material_ids": [
+          "M01",
+          "M02",
+          "M03",
+          "M04"
+        ]
+      },
+      "outcome": "success",
+      "error_code": null,
+      "retryable": null,
+      "message": "已生成AI 分镜视频脚本",
+      "fee": 10,
+      "minutes": 120,
+      "clock_before": "2026-11-02 09:11",
+      "clock_after": "2026-11-02 11:11",
+      "spent_after": 12
+    },
+    {
+      "seq": 4,
+      "step_id": "S4",
+      "tool": "save_plan",
+      "mode": null,
+      "args": {
+        "plan_id": "CP-f14eb947",
+        "option_id": "P1"
+      },
+      "outcome": "error",
+      "error_code": "STORAGE_READ_ONLY",
+      "retryable": false,
+      "message": "[故障注入] 方案保存不可用（STORAGE_READ_ONLY），本次没有产生任何结果",
+      "fee": 0,
+      "minutes": 2,
+      "clock_before": "2026-11-02 11:11",
+      "clock_after": "2026-11-02 11:13",
+      "spent_after": 12
+    },
+    {
+      "seq": 5,
+      "step_id": "S5",
+      "tool": "estimate_cost",
+      "mode": null,
+      "args": {
+        "option_id": "P1",
+        "spent": 12,
+        "clock": "2026-11-02 11:13",
+        "items": [
+          "estimate_cost",
+          "save_plan"
+        ]
+      },
+      "outcome": "success",
+      "error_code": null,
+      "retryable": null,
+      "message": "P1 预计合计 12，预计 2026-11-02 11:16 完成",
+      "fee": 0,
+      "minutes": 1,
+      "clock_before": "2026-11-02 11:13",
+      "clock_after": "2026-11-02 11:14",
+      "spent_after": 12
+    },
+    {
+      "seq": 6,
+      "step_id": "S6",
+      "tool": "save_plan",
+      "mode": null,
+      "args": {
+        "plan_id": "CP-f14eb947",
+        "option_id": "P1"
+      },
+      "outcome": "success",
+      "error_code": null,
+      "retryable": null,
+      "message": "方案已保存",
+      "fee": 0,
+      "minutes": 2,
+      "clock_before": "2026-11-02 11:14",
+      "clock_after": "2026-11-02 11:16",
+      "spent_after": 12
+    }
+  ],
+  "decisions": [
+    {
+      "seq": 1,
+      "after_call": 0,
+      "event_type": "plan",
+      "trigger": "初始规划",
+      "action": "plan",
+      "option_id": "P1",
+      "tool": null,
+      "reason": "初始规划且预算20、剩余540分钟，优先选择效果最好的P1旗舰方案，先由成本估算确认可行性与费用。",
+      "policy": "llm:deepseek-flash",
+      "model_call": {
+        "response_id": "5913dc52-ac06-4481-8316-9ac132e6078f",
+        "model": "deepseek-flash",
+        "total_tokens": 956
+      },
+      "allowed_actions": [
+        "plan:P1",
+        "plan:P2",
+        "plan:P3"
+      ]
+    },
+    {
+      "seq": 2,
+      "after_call": 1,
+      "event_type": "step_ready",
+      "trigger": "S1 成本估算：预计合计 12 ≤ 预算 20，预计 2026-11-02 11:13 完成 ≤ 截止；下一步是 S2 素材检索",
+      "action": "call_tool",
+      "option_id": null,
+      "tool": "search_materials",
+      "reason": "P1 成本估算 12≤预算20、预计11:13完成≤截止，方案可行，继续执行 S2 素材检索",
+      "policy": "llm:deepseek-flash",
+      "model_call": {
+        "response_id": "438129bc-7e4a-48b2-976d-6638433df840",
+        "model": "deepseek-flash",
+        "total_tokens": 1310
+      },
+      "allowed_actions": [
+        "call_tool:search_materials",
+        "switch_option:P2",
+        "switch_option:P3"
+      ]
+    },
+    {
+      "seq": 3,
+      "after_call": 2,
+      "event_type": "step_ready",
+      "trigger": "S2 素材检索：找到 4 条相关素材；下一步是 S3 脚本生成（AI 分镜视频脚本）",
+      "action": "call_tool",
+      "option_id": null,
+      "tool": "generate_script",
+      "reason": "P1 当前可行，预计总费用 12 未超预算 20，预计 11:13 完成远早于 18:00 截止，且素材 4 条已满足需求 3，继续执行 S3 脚本生成。",
+      "policy": "llm:deepseek-flash",
+      "model_call": {
+        "response_id": "0eeefa08-c6ae-4982-ba6a-7878fc758470",
+        "model": "deepseek-flash",
+        "total_tokens": 1326
+      },
+      "allowed_actions": [
+        "call_tool:generate_script",
+        "switch_option:P2",
+        "switch_option:P3"
+      ]
+    },
+    {
+      "seq": 4,
+      "after_call": 3,
+      "event_type": "step_ready",
+      "trigger": "S3 脚本生成：已生成AI 分镜视频脚本；下一步是 S4 方案保存",
+      "action": "call_tool",
+      "option_id": null,
+      "tool": "save_plan",
+      "reason": "P1 仍可行（预计总费用 12、11:13 完成，远早于 18:00 截止），S1-S3 已成功且脚本已生成，下一步只需执行 S4 保存方案。",
+      "policy": "llm:deepseek-flash",
+      "model_call": {
+        "response_id": "7aaa05f8-7906-44b6-b005-7fe043002e9d",
+        "model": "deepseek-flash",
+        "total_tokens": 1308
+      },
+      "allowed_actions": [
+        "call_tool:save_plan",
+        "switch_option:P2",
+        "switch_option:P3"
+      ]
+    },
+    {
+      "seq": 5,
+      "after_call": 4,
+      "event_type": "tool_error",
+      "trigger": "S4 方案保存失败：STORAGE_READ_ONLY（不可重试，[故障注入] 方案保存不可用（STORAGE_READ_ONLY），本次没有产生任何结果）",
+      "action": "stop",
+      "option_id": null,
+      "tool": null,
+      "reason": "S1-S3 已成功（含 premium 脚本），但 save_plan 因 STORAGE_READ_ONLY 不可重试，P1/P2/P3 全部被该工具不可用阻塞，allowed_actions 仅剩 stop，方案无法落盘保存，缺口为保存能力。",
+      "policy": "llm:deepseek-flash",
+      "model_call": {
+        "response_id": "4a540959-1e34-431d-8e98-1d0be3d4e4d0",
+        "model": "deepseek-flash",
+        "total_tokens": 1414
+      },
+      "allowed_actions": [
+        "stop"
+      ]
+    },
+    {
+      "seq": 6,
+      "after_call": 4,
+      "event_type": "plan",
+      "trigger": "续跑（第 1 次）：重新允许 save_plan",
+      "action": "plan",
+      "option_id": "P1",
+      "tool": null,
+      "reason": "P1 的 S1-S3 均已完成且结果可复用，仅 S4 保存失败，剩余预算 8 单位可重试保存，故保留优先级最高的 P1",
+      "policy": "llm:deepseek-flash",
+      "model_call": {
+        "response_id": "c642d8a7-f9b8-4dcd-b130-88341701429f",
+        "model": "deepseek-flash",
+        "total_tokens": 1257
+      },
+      "allowed_actions": [
+        "plan:P1",
+        "plan:P2",
+        "plan:P3"
+      ]
+    },
+    {
+      "seq": 7,
+      "after_call": 5,
+      "event_type": "step_ready",
+      "trigger": "S5 成本估算：预计合计 12 ≤ 预算 20，预计 2026-11-02 11:16 完成 ≤ 截止；下一步是 S6 方案保存",
+      "action": "call_tool",
+      "option_id": null,
+      "tool": "save_plan",
+      "reason": "P1 是当前 priority 1 方案且 feasible，成本估算 12≤20、预计 11:16 完成≤截止，仅剩 S6 方案保存一步，继续执行。",
+      "policy": "llm:deepseek-flash",
+      "model_call": {
+        "response_id": "595313bc-3c84-4a5b-a822-45a41059a594",
+        "model": "deepseek-flash",
+        "total_tokens": 1298
+      },
+      "allowed_actions": [
+        "call_tool:save_plan",
+        "switch_option:P2",
+        "switch_option:P3"
+      ]
+    }
+  ],
+  "trace": [
+    {
+      "step": 1,
+      "decisions": [
+        {
+          "seq": 1,
+          "trigger": "初始规划",
+          "action": "plan:P1",
+          "reason": "初始规划且预算20、剩余540分钟，优先选择效果最好的P1旗舰方案，先由成本估算确认可行性与费用。",
+          "decided_by": "llm:deepseek-flash",
+          "allowed_actions": [
+            "plan:P1",
+            "plan:P2",
+            "plan:P3"
+          ]
+        }
+      ],
+      "tool_call": {
+        "seq": 1,
+        "step_id": "S1",
+        "tool": "estimate_cost",
+        "mode": null,
+        "args": {
+          "option_id": "P1",
+          "spent": 0,
+          "clock": "2026-11-02 09:00",
+          "items": [
+            "estimate_cost",
+            "search_materials",
+            "generate_script:premium",
+            "save_plan"
+          ]
+        },
+        "outcome": "success",
+        "error_code": null,
+        "retryable": null,
+        "message": "P1 预计合计 12，预计 2026-11-02 11:13 完成",
+        "fee": 0,
+        "minutes": 1,
+        "clock_before": "2026-11-02 09:00",
+        "clock_after": "2026-11-02 09:01",
+        "spent_after": 0
+      },
+      "next_action": "call_tool:search_materials"
+    },
+    {
+      "step": 2,
+      "decisions": [
+        {
+          "seq": 2,
+          "trigger": "S1 成本估算：预计合计 12 ≤ 预算 20，预计 2026-11-02 11:13 完成 ≤ 截止；下一步是 S2 素材检索",
+          "action": "call_tool:search_materials",
+          "reason": "P1 成本估算 12≤预算20、预计11:13完成≤截止，方案可行，继续执行 S2 素材检索",
+          "decided_by": "llm:deepseek-flash",
+          "allowed_actions": [
+            "call_tool:search_materials",
+            "switch_option:P2",
+            "switch_option:P3"
+          ]
+        }
+      ],
+      "tool_call": {
+        "seq": 2,
+        "step_id": "S2",
+        "tool": "search_materials",
+        "mode": null,
+        "args": {
+          "topic": "秋季新品上市",
+          "need": 3
+        },
+        "outcome": "success",
+        "error_code": null,
+        "retryable": null,
+        "message": "找到 4 条相关素材",
+        "fee": 2,
+        "minutes": 10,
+        "clock_before": "2026-11-02 09:01",
+        "clock_after": "2026-11-02 09:11",
+        "spent_after": 2
+      },
+      "next_action": "call_tool:generate_script"
+    },
+    {
+      "step": 3,
+      "decisions": [
+        {
+          "seq": 3,
+          "trigger": "S2 素材检索：找到 4 条相关素材；下一步是 S3 脚本生成（AI 分镜视频脚本）",
+          "action": "call_tool:generate_script",
+          "reason": "P1 当前可行，预计总费用 12 未超预算 20，预计 11:13 完成远早于 18:00 截止，且素材 4 条已满足需求 3，继续执行 S3 脚本生成。",
+          "decided_by": "llm:deepseek-flash",
+          "allowed_actions": [
+            "call_tool:generate_script",
+            "switch_option:P2",
+            "switch_option:P3"
+          ]
+        }
+      ],
+      "tool_call": {
+        "seq": 3,
+        "step_id": "S3",
+        "tool": "generate_script",
+        "mode": "premium",
+        "args": {
+          "topic": "秋季新品上市",
+          "material_ids": [
+            "M01",
+            "M02",
+            "M03",
+            "M04"
+          ]
+        },
+        "outcome": "success",
+        "error_code": null,
+        "retryable": null,
+        "message": "已生成AI 分镜视频脚本",
+        "fee": 10,
+        "minutes": 120,
+        "clock_before": "2026-11-02 09:11",
+        "clock_after": "2026-11-02 11:11",
+        "spent_after": 12
+      },
+      "next_action": "call_tool:save_plan"
+    },
+    {
+      "step": 4,
+      "decisions": [
+        {
+          "seq": 4,
+          "trigger": "S3 脚本生成：已生成AI 分镜视频脚本；下一步是 S4 方案保存",
+          "action": "call_tool:save_plan",
+          "reason": "P1 仍可行（预计总费用 12、11:13 完成，远早于 18:00 截止），S1-S3 已成功且脚本已生成，下一步只需执行 S4 保存方案。",
+          "decided_by": "llm:deepseek-flash",
+          "allowed_actions": [
+            "call_tool:save_plan",
+            "switch_option:P2",
+            "switch_option:P3"
+          ]
+        }
+      ],
+      "tool_call": {
+        "seq": 4,
+        "step_id": "S4",
+        "tool": "save_plan",
+        "mode": null,
+        "args": {
+          "plan_id": "CP-f14eb947",
+          "option_id": "P1"
+        },
+        "outcome": "error",
+        "error_code": "STORAGE_READ_ONLY",
+        "retryable": false,
+        "message": "[故障注入] 方案保存不可用（STORAGE_READ_ONLY），本次没有产生任何结果",
+        "fee": 0,
+        "minutes": 2,
+        "clock_before": "2026-11-02 11:11",
+        "clock_after": "2026-11-02 11:13",
+        "spent_after": 12
+      },
+      "next_action": "stop"
+    },
+    {
+      "step": 5,
+      "decisions": [
+        {
+          "seq": 5,
+          "trigger": "S4 方案保存失败：STORAGE_READ_ONLY（不可重试，[故障注入] 方案保存不可用（STORAGE_READ_ONLY），本次没有产生任何结果）",
+          "action": "stop",
+          "reason": "S1-S3 已成功（含 premium 脚本），但 save_plan 因 STORAGE_READ_ONLY 不可重试，P1/P2/P3 全部被该工具不可用阻塞，allowed_actions 仅剩 stop，方案无法落盘保存，缺口为保存能力。",
+          "decided_by": "llm:deepseek-flash",
+          "allowed_actions": [
+            "stop"
+          ]
+        },
+        {
+          "seq": 6,
+          "trigger": "续跑（第 1 次）：重新允许 save_plan",
+          "action": "plan:P1",
+          "reason": "P1 的 S1-S3 均已完成且结果可复用，仅 S4 保存失败，剩余预算 8 单位可重试保存，故保留优先级最高的 P1",
+          "decided_by": "llm:deepseek-flash",
+          "allowed_actions": [
+            "plan:P1",
+            "plan:P2",
+            "plan:P3"
+          ]
+        }
+      ],
+      "tool_call": {
+        "seq": 5,
+        "step_id": "S5",
+        "tool": "estimate_cost",
+        "mode": null,
+        "args": {
+          "option_id": "P1",
+          "spent": 12,
+          "clock": "2026-11-02 11:13",
+          "items": [
+            "estimate_cost",
+            "save_plan"
+          ]
+        },
+        "outcome": "success",
+        "error_code": null,
+        "retryable": null,
+        "message": "P1 预计合计 12，预计 2026-11-02 11:16 完成",
+        "fee": 0,
+        "minutes": 1,
+        "clock_before": "2026-11-02 11:13",
+        "clock_after": "2026-11-02 11:14",
+        "spent_after": 12
+      },
+      "next_action": "call_tool:save_plan"
+    },
+    {
+      "step": 6,
+      "decisions": [
+        {
+          "seq": 7,
+          "trigger": "S5 成本估算：预计合计 12 ≤ 预算 20，预计 2026-11-02 11:16 完成 ≤ 截止；下一步是 S6 方案保存",
+          "action": "call_tool:save_plan",
+          "reason": "P1 是当前 priority 1 方案且 feasible，成本估算 12≤20、预计 11:16 完成≤截止，仅剩 S6 方案保存一步，继续执行。",
+          "decided_by": "llm:deepseek-flash",
+          "allowed_actions": [
+            "call_tool:save_plan",
+            "switch_option:P2",
+            "switch_option:P3"
+          ]
+        }
+      ],
+      "tool_call": {
+        "seq": 6,
+        "step_id": "S6",
+        "tool": "save_plan",
+        "mode": null,
+        "args": {
+          "plan_id": "CP-f14eb947",
+          "option_id": "P1"
+        },
+        "outcome": "success",
+        "error_code": null,
+        "retryable": null,
+        "message": "方案已保存",
+        "fee": 0,
+        "minutes": 2,
+        "clock_before": "2026-11-02 11:14",
+        "clock_after": "2026-11-02 11:16",
+        "spent_after": 12
+      },
+      "next_action": "结束"
+    }
+  ],
+  "cost": {
+    "budget": 20,
+    "spent": 12,
+    "remaining": 8,
+    "ledger": [
+      {
+        "call_seq": 2,
+        "step_id": "S2",
+        "tool": "search_materials",
+        "mode": null,
+        "fee": 2,
+        "basis": "成功调用按 fee 计费"
+      },
+      {
+        "call_seq": 3,
+        "step_id": "S3",
+        "tool": "generate_script",
+        "mode": "premium",
+        "fee": 10,
+        "basis": "成功调用按 fee 计费"
+      }
+    ],
+    "rule": "费用合计 = 实际发生的工具调用费用之和：成功/部分成功按表中 fee，失败按 fee_on_failure；复用的已成功步骤不再计费。每次调用（含失败）的耗时都计入模拟时钟。"
+  },
+  "time": {
+    "start_time": "2026-11-02 09:00",
+    "clock": "2026-11-02 11:16",
+    "deadline": "2026-11-02 18:00",
+    "minutes_used": 136,
+    "minutes_left": 404
+  },
+  "usage": {
+    "tool_calls": 6,
+    "model_turns": 7,
+    "max_tool_calls": 15,
+    "max_model_turns": 30
+  },
+  "saved_plan": {
+    "result": "created",
+    "plan_id": "CP-f14eb947",
+    "version": 1,
+    "message": "方案已保存"
+  },
+  "plan_document": {
+    "plan_id": "CP-f14eb947",
+    "topic": "秋季新品上市",
+    "option": {
+      "option_id": "P1",
+      "name": "旗舰方案：AI 分镜短视频"
+    },
+    "materials": [
+      {
+        "material_id": "M01",
+        "title": "秋季新品开箱视频",
+        "type": "video"
+      },
+      {
+        "material_id": "M02",
+        "title": "秋季穿搭模特图",
+        "type": "image"
+      },
+      {
+        "material_id": "M03",
+        "title": "新品卖点文案库",
+        "type": "copy"
+      },
+      {
+        "material_id": "M04",
+        "title": "门店上市实拍",
+        "type": "video"
+      }
+    ],
+    "script": {
+      "title": "秋季新品上市｜45 秒 AI 分镜短视频",
+      "duration_sec": 45,
+      "shots": [
+        {
+          "shot": 1,
+          "purpose": "开场钩子",
+          "seconds": 3,
+          "material_id": "M01",
+          "visual": "秋季新品开箱视频",
+          "voiceover": "3 秒抛出「秋季新品上市」的核心看点"
+        },
+        {
+          "shot": 2,
+          "purpose": "核心卖点",
+          "seconds": 10,
+          "material_id": "M02",
+          "visual": "秋季穿搭模特图",
+          "voiceover": "特写秋季穿搭模特图，讲清一个最打动人的卖点"
+        },
+        {
+          "shot": 3,
+          "purpose": "使用场景",
+          "seconds": 12,
+          "material_id": "M03",
+          "visual": "新品卖点文案库",
+          "voiceover": "场景化演示，突出新品、卖点"
+        },
+        {
+          "shot": 4,
+          "purpose": "细节与口碑",
+          "seconds": 10,
+          "material_id": "M04",
+          "visual": "门店上市实拍",
+          "voiceover": "用细节和真实反馈建立信任"
+        },
+        {
+          "shot": 5,
+          "purpose": "行动号召",
+          "seconds": 10,
+          "material_id": "M01",
+          "visual": "秋季新品开箱视频",
+          "voiceover": "引导点击/预约，强调活动时效"
+        }
+      ],
+      "cta": "点击了解「秋季新品上市」活动详情",
+      "format": "AI 分镜视频脚本"
+    },
+    "cost": {
+      "total": 12,
+      "budget": 20,
+      "lines": [
+        {
+          "tool": "search_materials",
+          "mode": null,
+          "fee": 2,
+          "basis": "成功调用按 fee 计费"
+        },
+        {
+          "tool": "generate_script",
+          "mode": "premium",
+          "fee": 10,
+          "basis": "成功调用按 fee 计费"
+        }
+      ]
+    },
+    "timeline": {
+      "start_time": "2026-11-02 09:00",
+      "finish_at": "2026-11-02 11:16",
+      "deadline": "2026-11-02 18:00"
+    },
+    "source": {
+      "run_id": "R-f14eb947",
+      "plan_version": 2
+    }
+  },
+  "plan_document_saved": true,
+  "incomplete_reason": null,
+  "gaps": [],
+  "resume_count": 1,
+  "message": "方案已保存（CP-f14eb947，created），费用合计 12 / 预算 20。"
+}

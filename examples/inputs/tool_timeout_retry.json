@@ -1,0 +1,1 @@
+{"topic": "双十一大促预热", "budget": 14, "deadline": "2026-11-05 18:00", "start_time": "2026-11-05 09:00", "simulate": {"faults": {"generate_script:premium": "fail_once"}}}
